@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDailyGrid } from "@/lib/daily-grid";
+import { getRarityInfo } from "@/lib/rarity";
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -27,5 +28,9 @@ export async function GET(request: Request) {
     date,
     rows: grid.rows.map((r) => ({ id: r.id, label: r.label })),
     cols: grid.cols.map((c) => ({ id: c.id, label: c.label })),
+    solutionsCounts: grid.cells.map((row) => row.map((cell) => cell.solutions.length)),
+    maxRarityTiers: grid.cells.map((row) =>
+      row.map((cell) => Math.max(...cell.solutions.map((s) => getRarityInfo(s.population).tier))),
+    ),
   });
 }

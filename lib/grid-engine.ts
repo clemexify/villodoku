@@ -23,6 +23,8 @@ export interface Commune {
   est_sous_prefecture: boolean;
   est_littorale: boolean;
   est_montagne: boolean;
+  frontiere_terrestre: boolean;
+  mer_bordee: string | null;
   cours_eau: string[];
   nom_avec_tiret: boolean;
   nom_commence_saint: boolean;
@@ -70,6 +72,20 @@ const MIN_CANDIDATES = {
   region: 30,
   river: 3,
 };
+
+// Catégories privilégiées pour la génération des grilles : on tire les 6
+// critères d'une grille en priorité parmi celles-ci (cf. demande de test
+// avec les nouveaux critères mer/frontière).
+const PRIORITY_CATEGORIES = [
+  'letter',
+  'region',
+  'prefecture',
+  'population',
+  'mer',
+  'frontiere',
+  'tiret',
+  'montagne',
+];
 
 /**
  * Construit le pool de critères disponibles, regroupés par catégorie.
@@ -136,6 +152,36 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       label: 'Ville de montagne',
       category: 'montagne',
       test: (c) => c.est_montagne,
+    },
+  ]);
+
+  pool.set('frontiere', [
+    {
+      id: 'frontiere',
+      label: 'Frontière avec un pays étranger',
+      category: 'frontiere',
+      test: (c) => c.frontiere_terrestre,
+    },
+  ]);
+
+  pool.set('mer', [
+    {
+      id: 'mer_manche',
+      label: 'Bordée par la Manche / la mer du Nord',
+      category: 'mer',
+      test: (c) => c.mer_bordee === 'Manche',
+    },
+    {
+      id: 'mer_atlantique',
+      label: "Bordée par l'océan Atlantique",
+      category: 'mer',
+      test: (c) => c.mer_bordee === 'Atlantique',
+    },
+    {
+      id: 'mer_mediterranee',
+      label: 'Bordée par la mer Méditerranée',
+      category: 'mer',
+      test: (c) => c.mer_bordee === 'Méditerranée',
     },
   ]);
 
@@ -319,8 +365,12 @@ export function generateGrid(
   );
   if (categories.length < 6) return null;
 
+  const priorityCategories = PRIORITY_CATEGORIES.filter((cat) => categories.includes(cat));
+  const otherCategories = categories.filter((cat) => !priorityCategories.includes(cat));
+  const pickFrom = priorityCategories.length >= 6 ? priorityCategories : [...priorityCategories, ...otherCategories];
+
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const chosenCategories = shuffle(categories, rng).slice(0, 6);
+    const chosenCategories = shuffle(pickFrom, rng).slice(0, 6);
     const criteria = chosenCategories.map((cat) => pick(criteriaPool.get(cat)!, rng));
 
     // "Nom commence par Saint" est quasi imbriqué dans "Commence par la

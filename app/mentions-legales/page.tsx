@@ -12,10 +12,10 @@ export default function MentionsLegales() {
     <main className="mx-auto flex max-w-2xl flex-1 flex-col gap-6 px-4 py-10 text-sm leading-relaxed text-gray-700">
       <div className="flex flex-col gap-3">
         <Link href="/" className="font-display text-2xl font-bold tracking-tight">
-          <span className="text-emerald-600">Villo</span>
+          <span className="text-indigo-600">Villo</span>
           <span className="text-gray-800">doku</span>
         </Link>
-        <Link href="/" className="text-emerald-600 hover:underline">
+        <Link href="/" className="text-indigo-600 hover:underline">
           ← Retour au jeu
         </Link>
       </div>
@@ -28,7 +28,7 @@ export default function MentionsLegales() {
           Villodoku est un projet personnel, édité et développé par Clément Cruchon.
           <br />
           Contact :{" "}
-          <a href="mailto:clement.cruchon@gmail.com" className="text-emerald-600 hover:underline">
+          <a href="mailto:clement.cruchon@gmail.com" className="text-indigo-600 hover:underline">
             clement.cruchon@gmail.com
           </a>
         </p>
@@ -53,7 +53,7 @@ export default function MentionsLegales() {
             href="https://github.com/etalab/decoupage-administratif"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-emerald-600 hover:underline"
+            className="text-indigo-600 hover:underline"
           >
             @etalab/decoupage-administratif
           </a>{" "}

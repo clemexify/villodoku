@@ -1,9 +1,16 @@
 import { getDailyGrid } from "@/lib/daily-grid";
+import { lastNDates } from "@/lib/game-storage";
+import { getRarityInfo } from "@/lib/rarity";
 import VillodokuApp from "@/components/VillodokuApp";
 
-export default function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ date?: string }> }) {
   const today = new Date().toISOString().slice(0, 10);
-  const grid = getDailyGrid(today);
+  const { date } = await searchParams;
+
+  const availableDates = new Set(lastNDates(today, 7));
+  const selectedDate = date && /^\d{4}-\d{2}-\d{2}$/.test(date) && availableDates.has(date) ? date : today;
+
+  const grid = getDailyGrid(selectedDate);
 
   if (!grid) {
     return (
@@ -16,8 +23,13 @@ export default function Home() {
   return (
     <VillodokuApp
       today={today}
+      initialSelectedDate={selectedDate}
       initialRows={grid.rows.map((r) => ({ id: r.id, label: r.label }))}
       initialCols={grid.cols.map((c) => ({ id: c.id, label: c.label }))}
+      initialSolutionsCounts={grid.cells.map((row) => row.map((cell) => cell.solutions.length))}
+      initialMaxRarityTiers={grid.cells.map((row) =>
+        row.map((cell) => Math.max(...cell.solutions.map((s) => getRarityInfo(s.population).tier))),
+      )}
     />
   );
 }

@@ -23,6 +23,8 @@
   "est_sous_prefecture": false,
   "est_littorale":       true,
   "est_montagne":        false,
+  "frontiere_terrestre": false,
+  "mer_bordee":          "Méditerranée",
   "cours_eau":           ["Huveaune"],
   "nom_avec_tiret":      false,
   "nom_commence_saint":  false,
@@ -41,6 +43,10 @@
 | Sous-préfecture | `est_sous_prefecture == true` | Brest, Saint-Malo... |
 | Littorale | `est_littorale == true` | Nice, Biarritz... |
 | Montagne | `est_montagne == true` | Grenoble, Chamonix... |
+| Frontière terrestre | `frontiere_terrestre == true` | Strasbourg, Hendaye... |
+| Bordée par la Manche / mer du Nord | `mer_bordee == "Manche"` | Le Havre, Dunkerque, Saint-Malo... |
+| Bordée par l'Atlantique | `mer_bordee == "Atlantique"` | Brest, La Rochelle, Biarritz... |
+| Bordée par la Méditerranée | `mer_bordee == "Méditerranée"` | Marseille, Nice, Sète... |
 | Cours d'eau | `cours_eau.includes("Loire")` | Nantes, Tours, Orléans... |
 | Nom avec tiret | `nom_avec_tiret == true` | Aix-en-Provence... |
 | Commence par Saint | `nom_commence_saint == true` | Saint-Étienne... |
@@ -53,6 +59,7 @@
 - **Préfectures / sous-préfectures** : dérivé des chefs-lieux de département et d'arrondissement
 - **Communes littorales** : encodage depuis la liste Loi Littoral 1986 / CEREMA
 - **Communes de montagne** : encodage depuis la loi Montagne + altitude
+- **Frontière terrestre / mer bordée** : encodage manuel, vérifié commune par commune (géographie)
 - **Cours d'eau** : encodage manuel depuis BD Carthage IGN (principales villes)
 
 ## ⚠️ Points d'attention
@@ -60,6 +67,8 @@
 - **Littoral et cours d'eau** : encodage partiel (~50 villes littorales, ~100 villes avec cours d'eau).
   À compléter avec un croisement géospatial BD Carthage × contours communaux.
 - **Montagne** : ~32 villes encodées. À enrichir.
+- **Frontière terrestre** : 29 communes encodées (Belgique, Allemagne, Suisse, Italie, Espagne, Luxembourg, DOM).
+- **Mer bordée** : 169 communes encodées (57 Manche/mer du Nord, 53 Atlantique, 59 Méditerranée).
 - **Référence population** : millésime inclus dans le package etalab (recensement INSEE).
 - **Date de référence** : COG INSEE au 1er janvier 2024.
 
