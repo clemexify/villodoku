@@ -23,6 +23,7 @@ export interface Commune {
   est_sous_prefecture: boolean;
   est_littorale: boolean;
   est_montagne: boolean;
+  altitude: number | null;
   frontiere_terrestre: boolean;
   mer_bordee: string | null;
   cours_eau: string[];
@@ -149,9 +150,9 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
   pool.set('montagne', [
     {
       id: 'montagne',
-      label: 'Ville de montagne',
+      label: 'À plus de 500 m d\'altitude',
       category: 'montagne',
-      test: (c) => c.est_montagne,
+      test: (c) => (c.altitude ?? 0) > 500,
     },
   ]);
 
