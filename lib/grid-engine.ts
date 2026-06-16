@@ -58,12 +58,17 @@ export interface Grid {
 }
 
 export interface GridGenOptions {
-  /** Nombre minimum de solutions par case (défaut: 5) */
+  /** Nombre minimum de solutions par case (défaut: 3) */
   minSolutionsPerCell?: number;
   /** Codes commune des villes "connues du grand public" (cf. getWellKnownCityCodes) */
   topVilleCodes: Set<string>;
   /** Nombre maximum de tentatives avant d'abandonner (défaut: 5000) */
   maxAttempts?: number;
+  /**
+   * Si défini, force ce type de critère à figurer dans chaque tentative.
+   * Permet de générer des grilles garantissant un critère particulier (ex: "departement").
+   */
+  requiredCategory?: string;
 }
 
 // Seuils minimaux pour qu'une valeur de critère soit retenue dans le pool
@@ -71,6 +76,7 @@ export interface GridGenOptions {
 const MIN_CANDIDATES = {
   letter: 40,
   region: 30,
+  departement: 20,
   river: 3,
 };
 
@@ -80,12 +86,14 @@ const MIN_CANDIDATES = {
 const PRIORITY_CATEGORIES = [
   'letter',
   'region',
+  'departement',
   'prefecture',
   'population',
   'mer',
   'frontiere',
   'tiret',
   'montagne',
+  'river',
 ];
 
 /**
@@ -155,6 +163,24 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       test: (c) => (c.altitude ?? 0) > 500,
     },
   ]);
+
+  // Département : uniquement ceux suffisamment représentés dans le corpus
+  const deptCounts = new Map<string, number>();
+  for (const c of communes) {
+    deptCounts.set(c.departement_nom, (deptCounts.get(c.departement_nom) ?? 0) + 1);
+  }
+  const depts: Criterion[] = [];
+  for (const [dept, count] of deptCounts) {
+    if (count >= MIN_CANDIDATES.departement) {
+      depts.push({
+        id: `dept_${dept}`,
+        label: `Département : ${dept}`,
+        category: 'departement',
+        test: (c) => c.departement_nom === dept,
+      });
+    }
+  }
+  pool.set('departement', depts);
 
   pool.set('frontiere', [
     {
@@ -359,7 +385,7 @@ export function generateGrid(
   rng: () => number,
   options: GridGenOptions
 ): Grid | null {
-  const { minSolutionsPerCell = 5, topVilleCodes, maxAttempts = 5000 } = options;
+  const { minSolutionsPerCell = 3, topVilleCodes, maxAttempts = 5000, requiredCategory } = options;
 
   const categories = Array.from(criteriaPool.keys()).filter(
     (cat) => (criteriaPool.get(cat) ?? []).length > 0
@@ -371,19 +397,56 @@ export function generateGrid(
   const pickFrom = priorityCategories.length >= 6 ? priorityCategories : [...priorityCategories, ...otherCategories];
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const chosenCategories = shuffle(pickFrom, rng).slice(0, 6);
-    const criteria = chosenCategories.map((cat) => pick(criteriaPool.get(cat)!, rng));
+    let criteria: Criterion[];
+    let rows: Criterion[];
+    let cols: Criterion[];
 
-    // "Nom commence par Saint" est quasi imbriqué dans "Commence par la
-    // lettre S" et dans "Nom avec un tiret" (la quasi-totalité des villes
-    // "Saint-..." commencent par S et contiennent un tiret) : ces
-    // croisements seraient redondants, donc on les rejette.
-    const ids = new Set(criteria.map((c) => c.id));
-    if (ids.has('saint') && (ids.has('letter_S') || ids.has('tiret'))) continue;
+    if (requiredCategory) {
+      // Chemin "catégorie imposée" : on choisit d'abord le critère requis, puis on
+      // cherche 5 autres critères *compatibles* avec lui parmi les catégories disponibles
+      // (excluant "region" pour éviter le conflit dept/région).
+      // Cela évite les combinaisons fondamentalement impossibles telles que
+      // "département plat × altitude > 500 m" ou "département intérieur × mer".
+      const reqPool = criteriaPool.get(requiredCategory) ?? [];
+      if (reqPool.length === 0) continue;
 
-    const shuffled = shuffle(criteria, rng);
-    const rows = shuffled.slice(0, 3);
-    const cols = shuffled.slice(3, 6);
+      const reqCriterion = pick(reqPool, rng);
+
+      const candidateCats = pickFrom.filter((c) => c !== requiredCategory && c !== 'region');
+      const compatGroups: Array<{ cat: string; crit: Criterion[] }> = [];
+      for (const cat of candidateCats) {
+        const compat = (criteriaPool.get(cat) ?? []).filter((crit) => {
+          const sols = communes.filter((co) => reqCriterion.test(co) && crit.test(co));
+          return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune));
+        });
+        if (compat.length > 0) compatGroups.push({ cat, crit: compat });
+      }
+
+      if (compatGroups.length < 5) continue;
+
+      const chosenGroups = shuffle(compatGroups, rng).slice(0, 5);
+      criteria = shuffle(
+        [reqCriterion, ...chosenGroups.map((g) => pick(g.crit, rng))],
+        rng
+      );
+      rows = criteria.slice(0, 3);
+      cols = criteria.slice(3, 6);
+    } else {
+      // Chemin standard
+      const chosenCategories = shuffle(pickFrom, rng).slice(0, 6);
+      criteria = chosenCategories.map((cat) => pick(criteriaPool.get(cat)!, rng));
+
+      const ids = new Set(criteria.map((c) => c.id));
+      if (ids.has('saint') && (ids.has('letter_S') || ids.has('tiret'))) continue;
+
+      const hasRegion = criteria.some((c) => c.category === 'region');
+      const hasDept = criteria.some((c) => c.category === 'departement');
+      if (hasRegion && hasDept) continue;
+
+      const shuffled = shuffle(criteria, rng);
+      rows = shuffled.slice(0, 3);
+      cols = shuffled.slice(3, 6);
+    }
 
     const cells: GridCell[][] = [];
     let valid = true;
