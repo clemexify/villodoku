@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { CellState } from "@/lib/game-storage";
 import type { CriterionInfo } from "./VillodokuGrid";
 import CityCard, { type SolutionCommune } from "./CityCard";
-import { getRarityInfo } from "@/lib/rarity";
+import { getRarityInfoFromRank } from "@/lib/rarity";
 
 interface CellSolutions {
   count: number;
@@ -94,15 +94,29 @@ export default function SolutionsModal({
                               if (full) setSelected(full);
                             }}
                           >
-                            <span>{playerCommune.nom_commune}</span>
-                            <span className={`whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${getRarityInfo(playerCommune.population).badgeClass}`}>
-                              {getRarityInfo(playerCommune.population).label}
+                            <span className="flex items-baseline gap-1.5">
+                              {playerCommune.nom_commune}
+                              <span className="text-[10px] font-normal text-emerald-600">
+                                {playerCommune.population.toLocaleString("fr-FR")} hab.
+                              </span>
                             </span>
+                            {(() => {
+                              const pc = playerCells[i][j];
+                              const rarity =
+                                pc.solutionRank !== undefined && pc.solutionsCount !== undefined
+                                  ? getRarityInfoFromRank(pc.solutionRank, pc.solutionsCount)
+                                  : getRarityInfoFromRank(0, 1);
+                              return (
+                                <span className={`whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${rarity.badgeClass}`}>
+                                  {rarity.label}
+                                </span>
+                              );
+                            })()}
                           </button>
                         </div>
                       )}
 
-                      {/* Autres villes valides */}
+                      {/* Autres villes valides — distribution égale par tier de rareté */}
                       <div className="mt-2 flex flex-col gap-1">
                         {cell.communes
                           .filter(
@@ -111,18 +125,26 @@ export default function SolutionsModal({
                               c.nom_commune !== playerCommune.nom_commune ||
                               c.departement_nom !== playerCommune.departement_nom
                           )
-                          .map((c) => (
-                            <button
-                              key={`${c.nom_commune}-${c.departement_nom}`}
-                              className="flex w-full items-center justify-between rounded-lg px-3 py-1.5 text-left text-sm text-gray-700 transition hover:bg-indigo-50 hover:text-indigo-700"
-                              onClick={() => setSelected(c)}
-                            >
-                              <span>{c.nom_commune}</span>
-                              <span className={`whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${getRarityInfo(c.population).badgeClass}`}>
-                                {getRarityInfo(c.population).label}
-                              </span>
-                            </button>
-                          ))}
+                          .map((c) => {
+                            const rarity = getRarityInfoFromRank(c.rank ?? 0, c.solutionsCount ?? 1);
+                            return (
+                              <button
+                                key={`${c.nom_commune}-${c.departement_nom}`}
+                                className="flex w-full items-center justify-between rounded-lg px-3 py-1.5 text-left text-sm text-gray-700 transition hover:bg-indigo-50 hover:text-indigo-700"
+                                onClick={() => setSelected(c)}
+                              >
+                                <span className="flex items-baseline gap-1.5">
+                                  {c.nom_commune}
+                                  <span className="text-[10px] text-gray-400">
+                                    {c.population.toLocaleString("fr-FR")} hab.
+                                  </span>
+                                </span>
+                                <span className={`shrink-0 whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${rarity.badgeClass}`}>
+                                  {rarity.label}
+                                </span>
+                              </button>
+                            );
+                          })}
                       </div>
                     </div>
                   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { getRarityInfo } from "@/lib/rarity";
+import { getRarityInfo, getRarityInfoFromRank } from "@/lib/rarity";
 
 export interface SolutionCommune {
   nom_commune: string;
@@ -14,6 +14,9 @@ export interface SolutionCommune {
   mer_bordee: string | null;
   frontiere_terrestre: boolean;
   cours_eau: string[];
+  /** Rang dans les solutions de la case (0 = plus peuplée). Absent si inconnu. */
+  rank?: number;
+  solutionsCount?: number;
 }
 
 function getTraits(c: SolutionCommune): string[] {
@@ -35,7 +38,10 @@ export default function CityCard({
   commune: SolutionCommune;
   onClose: () => void;
 }) {
-  const rarity = getRarityInfo(commune.population);
+  const rarity =
+    commune.rank !== undefined && commune.solutionsCount !== undefined
+      ? getRarityInfoFromRank(commune.rank, commune.solutionsCount)
+      : getRarityInfo(commune.population);
   const traits = getTraits(commune);
   const wikiUrl = `https://fr.wikipedia.org/wiki/${encodeURIComponent(commune.nom_commune)}`;
 
