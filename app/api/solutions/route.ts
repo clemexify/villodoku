@@ -29,30 +29,11 @@ export async function GET(request: Request) {
       const sorted = [...cell.solutions].sort((a, b) => b.population - a.population);
       const total = sorted.length;
 
-      // Sélectionne 4 villes par tier de rareté (quintiles égaux) pour que
-      // chaque badge soit également représenté dans l'écran de résultats.
-      const PER_TIER = 4;
-      const TIERS = 5;
-      const selected: typeof sorted = [];
-      for (let t = 0; t < TIERS; t++) {
-        const start = Math.floor((t / TIERS) * total);
-        const end = Math.min(Math.floor(((t + 1) / TIERS) * total), total);
-        const band = sorted.slice(start, end);
-        if (band.length === 0) continue;
-        if (band.length <= PER_TIER) {
-          selected.push(...band);
-        } else {
-          // Échantillonne PER_TIER villes régulièrement espacées dans le band
-          for (let i = 0; i < PER_TIER; i++) {
-            const idx = Math.round((i / (PER_TIER - 1)) * (band.length - 1));
-            selected.push(band[idx]);
-          }
-        }
-      }
-
       return {
         count: total,
-        communes: selected.map((c) => ({
+        // Top 20 triées par population décroissante (plus commun en premier).
+        // Le client insère la réponse du joueur à sa position si elle n'y est pas.
+        communes: sorted.slice(0, 20).map((c) => ({
           nom_commune: c.nom_commune,
           departement_nom: c.departement_nom,
           region_nom: c.region_nom,

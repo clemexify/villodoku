@@ -79,73 +79,81 @@ export default function SolutionsModal({
                         {cell.count > 20 ? " (20 affichées)" : ""}
                       </p>
 
-                      {/* Réponse du joueur */}
-                      {playerCommune && (
-                        <div className="mt-2">
-                          <p className="mb-1 text-[10px] font-semibold text-emerald-600">Ta réponse</p>
-                          <button
-                            className="flex w-full items-center justify-between rounded-lg bg-emerald-50 px-3 py-1.5 text-left text-sm font-semibold text-emerald-800 transition hover:bg-emerald-100"
-                            onClick={() => {
-                              const full = cell.communes.find(
-                                (c) =>
-                                  c.nom_commune === playerCommune.nom_commune &&
-                                  c.departement_nom === playerCommune.departement_nom
-                              );
-                              if (full) setSelected(full);
-                            }}
-                          >
-                            <span className="flex items-baseline gap-1.5">
-                              {playerCommune.nom_commune}
-                              <span className="text-[10px] font-normal text-emerald-600">
-                                {playerCommune.population.toLocaleString("fr-FR")} hab.
-                              </span>
-                            </span>
-                            {(() => {
-                              const pc = playerCells[i][j];
-                              const rarity =
-                                pc.solutionRank !== undefined && pc.solutionsCount !== undefined
-                                  ? getRarityInfoFromRank(pc.solutionRank, pc.solutionsCount)
-                                  : getRarityInfoFromRank(0, 1);
-                              return (
-                                <span className={`whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${rarity.badgeClass}`}>
-                                  {rarity.label}
-                                </span>
-                              );
-                            })()}
-                          </button>
-                        </div>
-                      )}
-
-                      {/* Autres villes valides — distribution égale par tier de rareté */}
-                      <div className="mt-2 flex flex-col gap-1">
-                        {cell.communes
-                          .filter(
+                      {/* Liste unifiée triée par population — la réponse du joueur
+                          est surlignée à sa position naturelle dans le classement. */}
+                      {(() => {
+                        const pc = playerCells[i][j];
+                        // Construit la liste affichée : top 20 + insertion de la
+                        // réponse du joueur si elle n'y figure pas déjà.
+                        let list = [...cell.communes];
+                        let playerInList = false;
+                        if (playerCommune) {
+                          playerInList = list.some(
                             (c) =>
-                              !playerCommune ||
-                              c.nom_commune !== playerCommune.nom_commune ||
-                              c.departement_nom !== playerCommune.departement_nom
-                          )
-                          .map((c) => {
-                            const rarity = getRarityInfoFromRank(c.rank ?? 0, c.solutionsCount ?? 1);
-                            return (
-                              <button
-                                key={`${c.nom_commune}-${c.departement_nom}`}
-                                className="flex w-full items-center justify-between rounded-lg px-3 py-1.5 text-left text-sm text-gray-700 transition hover:bg-indigo-50 hover:text-indigo-700"
-                                onClick={() => setSelected(c)}
-                              >
-                                <span className="flex items-baseline gap-1.5">
-                                  {c.nom_commune}
-                                  <span className="text-[10px] text-gray-400">
-                                    {c.population.toLocaleString("fr-FR")} hab.
-                                  </span>
-                                </span>
-                                <span className={`shrink-0 whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${rarity.badgeClass}`}>
-                                  {rarity.label}
-                                </span>
-                              </button>
+                              c.nom_commune === playerCommune.nom_commune &&
+                              c.departement_nom === playerCommune.departement_nom
+                          );
+                          if (!playerInList) {
+                            // Insère à la bonne position selon la population
+                            const insertIdx = list.findIndex(
+                              (c) => c.population < playerCommune.population
                             );
-                          })}
-                      </div>
+                            const entry: SolutionCommune = {
+                              nom_commune: playerCommune.nom_commune,
+                              departement_nom: playerCommune.departement_nom,
+                              region_nom: playerCommune.departement_nom,
+                              population: playerCommune.population,
+                              est_prefecture: false,
+                              est_sous_prefecture: false,
+                              est_drom: false,
+                              est_montagne: false,
+                              mer_bordee: null,
+                              frontiere_terrestre: false,
+                              cours_eau: [],
+                              rank: pc.solutionRank,
+                              solutionsCount: pc.solutionsCount,
+                            };
+                            if (insertIdx === -1) list.push(entry);
+                            else list.splice(insertIdx, 0, entry);
+                          }
+                        }
+
+                        return (
+                          <div className="mt-2 max-h-52 overflow-y-auto flex flex-col gap-0.5 rounded-lg border border-gray-100">
+                            {list.map((c) => {
+                              const isPlayer =
+                                !!playerCommune &&
+                                c.nom_commune === playerCommune.nom_commune &&
+                                c.departement_nom === playerCommune.departement_nom;
+                              const rarity = getRarityInfoFromRank(
+                                c.rank ?? 0,
+                                c.solutionsCount ?? cell.count
+                              );
+                              return (
+                                <button
+                                  key={`${c.nom_commune}-${c.departement_nom}`}
+                                  className={`flex w-full items-center justify-between px-3 py-1.5 text-left text-sm transition first:rounded-t-lg last:rounded-b-lg ${
+                                    isPlayer
+                                      ? "bg-emerald-50 font-semibold text-emerald-800 hover:bg-emerald-100"
+                                      : "text-gray-700 hover:bg-indigo-50 hover:text-indigo-700"
+                                  }`}
+                                  onClick={() => setSelected(c)}
+                                >
+                                  <span className="flex items-baseline gap-1.5 min-w-0">
+                                    <span className="truncate">{c.nom_commune}</span>
+                                    <span className={`shrink-0 text-[10px] ${isPlayer ? "text-emerald-600" : "text-gray-400"}`}>
+                                      {c.population.toLocaleString("fr-FR")} hab.
+                                    </span>
+                                  </span>
+                                  <span className={`ml-2 shrink-0 whitespace-nowrap rounded-full px-1.5 py-0.5 text-[9px] font-semibold ${rarity.badgeClass}`}>
+                                    {rarity.label}
+                                  </span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        );
+                      })()}
                     </div>
                   );
                 })
