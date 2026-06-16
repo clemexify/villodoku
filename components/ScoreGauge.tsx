@@ -22,6 +22,9 @@ export default function ScoreGauge({ score }: { score: number }) {
           <div key={cap} className="absolute top-0 h-full w-0.5 bg-white/70" style={{ left: `${cap / 10}%` }} />
         ))}
       </div>
+      <p className="text-center text-[11px] text-gray-400">
+        Plus la ville trouvée est <span className="font-semibold text-violet-500">peu peuplée</span> parmi les réponses valides, plus tu marques de points.
+      </p>
     </div>
   );
 }
