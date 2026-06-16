@@ -202,7 +202,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -286,9 +288,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Reyssouze"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -624,7 +624,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -792,7 +794,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -834,7 +838,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -855,7 +861,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -1086,7 +1094,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -1170,7 +1180,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -1485,7 +1497,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -1737,7 +1751,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -1905,7 +1921,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -1989,7 +2007,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -2010,7 +2030,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -2031,7 +2053,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -2094,7 +2118,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -2220,7 +2246,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -2241,7 +2269,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "H",
@@ -2262,9 +2292,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Aisne"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -2391,7 +2419,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Aisne"
+        "Somme"
       ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
@@ -2581,7 +2609,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -2602,7 +2632,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -2623,7 +2655,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -2707,7 +2741,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -2875,7 +2911,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -3003,7 +3041,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -3024,7 +3064,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -3087,7 +3129,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -3171,9 +3215,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Bléone"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -3572,9 +3614,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Luye"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -3889,9 +3929,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Siagne"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -4311,10 +4349,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Var",
-        "Paillon"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -4944,7 +4979,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -5091,7 +5128,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -5196,7 +5235,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -5217,9 +5258,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Ouvèze"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -5240,7 +5279,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -5366,7 +5407,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -5450,7 +5493,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -5492,7 +5537,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -5660,7 +5707,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -5681,7 +5730,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -5723,7 +5774,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -5809,7 +5862,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -5830,7 +5885,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -5851,7 +5908,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -5872,7 +5931,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -5893,7 +5954,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -5914,7 +5977,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -5935,7 +6000,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -5977,7 +6044,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -6019,7 +6088,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -6124,9 +6195,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Ariège"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -6483,7 +6552,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -6504,7 +6575,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -6546,7 +6619,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -6567,7 +6642,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -6672,7 +6749,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -6819,7 +6898,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -6840,7 +6921,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -7010,9 +7093,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Aude"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -7831,7 +7912,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -7957,9 +8040,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Aveyron"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -8106,9 +8187,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Arc"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -8171,7 +8250,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -9074,9 +9155,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Huveaune"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -10042,7 +10121,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -10819,10 +10900,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Orne",
-        "Odon"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -12567,7 +12645,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -12609,7 +12689,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -12630,7 +12712,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -12672,7 +12756,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -12714,7 +12800,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -12756,7 +12844,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -12777,7 +12867,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -12798,7 +12890,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -12840,7 +12934,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -12945,7 +13041,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -13050,7 +13148,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -13113,7 +13213,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -13134,7 +13236,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -13197,7 +13301,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -13386,7 +13492,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -13638,7 +13746,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -14100,7 +14210,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -14121,9 +14233,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Charente"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -14522,7 +14632,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -14606,7 +14718,9 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -14753,7 +14867,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -14921,10 +15037,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Cher",
-        "Yèvre"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -15092,7 +15205,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -15134,7 +15249,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -15239,7 +15356,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -15302,7 +15421,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -15344,9 +15465,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Corrèze"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -15577,9 +15696,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Vézère"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -15705,7 +15822,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -15768,7 +15887,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -15831,10 +15952,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Ouche",
-        "Suzon"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -16212,7 +16330,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -17745,9 +17865,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Gouëdic"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -18041,9 +18159,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Creuse"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -18127,7 +18243,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -18379,7 +18497,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -18568,9 +18688,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Isle"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -18591,7 +18709,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -18822,7 +18942,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -18864,7 +18986,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -18885,7 +19009,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -18906,7 +19032,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -18992,7 +19120,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -19055,7 +19185,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -19244,7 +19376,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -19265,7 +19399,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -19328,7 +19464,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -19349,7 +19487,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -19412,7 +19552,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -19433,7 +19575,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -19454,7 +19598,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -19561,7 +19707,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -19603,7 +19751,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -19645,7 +19795,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -19792,7 +19944,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -19834,7 +19988,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -19960,7 +20116,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -20044,7 +20202,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -20065,7 +20225,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -20128,9 +20290,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Drôme"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -20193,7 +20353,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -20340,7 +20502,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -20571,7 +20735,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -20592,7 +20758,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -20802,7 +20970,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -20844,7 +21014,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -21243,10 +21415,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Eure",
-        "Iton"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -21288,7 +21457,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -21813,7 +21984,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -22023,9 +22196,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Eure-et-Loir"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -22802,9 +22973,7 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Penfeld"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -24715,9 +24884,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Odet"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "Q",
@@ -26817,9 +26984,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Gard"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -26840,7 +27005,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -27827,7 +27994,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -27869,7 +28038,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -27890,7 +28061,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -27974,7 +28147,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -28037,7 +28212,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -28142,7 +28319,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -28352,7 +28531,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -28583,7 +28764,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -28898,7 +29081,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -29108,7 +29293,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -29150,7 +29337,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -29234,7 +29423,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -29318,7 +29509,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -29423,7 +29616,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -29570,7 +29765,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -29780,7 +29977,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -29992,7 +30191,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -30055,9 +30256,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Gers"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -30519,7 +30718,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -30624,7 +30825,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -30687,7 +30890,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -31130,7 +31335,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -31529,7 +31736,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -31760,7 +31969,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -31907,7 +32118,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -31991,7 +32204,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -32012,7 +32227,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -32243,7 +32460,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -32348,7 +32567,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -32411,7 +32632,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -33629,9 +33852,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Lez"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -34597,9 +34818,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Lez"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -37539,10 +37758,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Ille",
-        "Vilaine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -38487,7 +38703,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -38508,10 +38726,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Indre",
-        "Théols"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -38721,7 +38936,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -38763,7 +38980,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -38847,7 +39066,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -38868,7 +39089,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -38910,7 +39133,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -39015,7 +39240,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -39036,7 +39263,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -39120,7 +39349,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -39183,7 +39414,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -39204,7 +39437,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -39267,7 +39502,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -39372,7 +39609,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -39414,7 +39653,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -39498,7 +39739,10 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher",
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -39519,7 +39763,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -39540,7 +39786,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -39582,7 +39830,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -39603,7 +39853,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -39645,7 +39897,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -39666,7 +39920,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -39730,8 +39986,8 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Loire",
-        "Cher"
+        "Cher",
+        "Loire"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -39795,7 +40051,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -39963,7 +40221,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -39984,7 +40244,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -40362,7 +40624,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -40404,7 +40668,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -40425,7 +40691,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -40908,7 +41176,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -40972,8 +41242,7 @@
       "est_littorale": false,
       "est_montagne": true,
       "cours_eau": [
-        "Isère",
-        "Drac"
+        "Isère"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -41604,7 +41873,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -41814,7 +42085,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -41940,7 +42213,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -42108,7 +42383,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -42150,7 +42427,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -42276,7 +42555,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -42297,7 +42578,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -42549,7 +42832,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -42738,7 +43023,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -42906,7 +43193,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -42948,7 +43237,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -43053,7 +43344,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -43200,7 +43493,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [],
+      "cours_eau": [
+        "Doubs"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -43263,9 +43558,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Vallière"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -44357,7 +44650,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -44420,7 +44715,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -44651,7 +44948,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -44714,7 +45013,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -44819,7 +45120,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -44840,7 +45143,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -44945,7 +45250,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Cher"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -45050,7 +45357,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -45071,7 +45380,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -45239,7 +45550,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -45281,7 +45594,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -45302,7 +45617,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -45533,7 +45850,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -45743,7 +46062,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -45806,7 +46127,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -46060,7 +46383,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -46186,7 +46511,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "U",
@@ -46207,7 +46534,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -46249,7 +46578,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -46270,7 +46601,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -46291,7 +46624,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -46312,7 +46647,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -46333,7 +46670,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -46354,7 +46693,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -46375,7 +46716,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -46417,7 +46760,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -46480,7 +46825,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -46501,7 +46848,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -46522,7 +46871,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -46564,7 +46915,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -46711,7 +47064,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -46900,7 +47255,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -47299,7 +47656,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -47719,9 +48078,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Loire"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -48436,8 +48793,7 @@
       "est_littorale": true,
       "est_montagne": false,
       "cours_eau": [
-        "Loire",
-        "Erdre"
+        "Loire"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -49194,7 +49550,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -50118,7 +50476,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -50160,7 +50520,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -50223,7 +50585,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -50601,7 +50965,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -50790,7 +51156,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -50896,8 +51264,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Loire",
-        "Loiret"
+        "Loire"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -51171,7 +51538,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -51213,7 +51582,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -51318,7 +51689,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -51465,9 +51838,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Lot"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -51614,7 +51985,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Dordogne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -51698,7 +52071,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -51845,7 +52220,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -51866,10 +52243,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Garonne",
-        "Lot"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "E",
@@ -51974,7 +52348,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -52268,7 +52644,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -52352,7 +52730,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -52373,7 +52753,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -52415,9 +52797,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Lot"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -52501,10 +52881,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Maine",
-        "Loire"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -52819,7 +53196,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -52945,7 +53324,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "O",
@@ -53050,7 +53431,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -53386,7 +53769,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -53449,7 +53834,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -53470,7 +53857,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -53659,7 +54048,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -53680,7 +54071,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -53806,7 +54199,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -53869,7 +54264,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -54394,9 +54791,7 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Divette"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -55194,7 +55589,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -55343,7 +55740,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -55364,7 +55763,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -55511,10 +55912,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Vesle",
-        "Marne"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -55724,7 +56122,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -55852,7 +56252,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -55873,7 +56275,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -55936,7 +56340,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -56293,9 +56699,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Mayenne"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -56799,7 +57203,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -56841,7 +57247,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -56988,7 +57396,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -57009,7 +57419,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -57324,7 +57736,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -57534,10 +57948,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Meurthe",
-        "Moselle"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -57558,7 +57969,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -57621,7 +58034,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -57642,7 +58057,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -57894,7 +58311,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -58083,7 +58502,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -58104,9 +58525,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Ornain"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -58127,7 +58546,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -58295,7 +58716,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -58316,7 +58739,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -58337,7 +58762,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -58358,7 +58785,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -59366,10 +59795,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Scorff",
-        "Blavet"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -60608,9 +61034,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Marle"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -61723,7 +62147,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -61871,8 +62297,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Moselle",
-        "Seille"
+        "Moselle"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -62020,7 +62445,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -62545,7 +62972,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -62692,7 +63121,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -62734,7 +63165,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "U",
@@ -62902,7 +63335,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "Y",
@@ -62923,7 +63358,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -62965,7 +63402,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -63007,7 +63446,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -63028,7 +63469,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -63049,7 +63492,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -63154,7 +63599,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -63366,7 +63813,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -64626,9 +65075,7 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Aa"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -65972,9 +66419,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Deûle"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -67297,9 +67742,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Sambre"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -68433,7 +68876,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -68475,7 +68920,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -68769,7 +69216,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -68855,7 +69304,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -69086,7 +69537,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -69191,7 +69644,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -69443,7 +69898,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -69548,7 +70005,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -69569,7 +70028,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -69674,7 +70135,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -69758,7 +70221,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -69800,7 +70265,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -69821,7 +70288,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -69842,7 +70311,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -71060,9 +71531,7 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Liane"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -71188,9 +71657,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Pas"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -73752,7 +74219,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -73899,10 +74368,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [
-        "Allier",
-        "Tiretaine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -73944,7 +74410,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -74028,7 +74496,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -74133,7 +74603,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -74154,7 +74626,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -74343,7 +74817,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -74679,7 +75155,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Allier"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -76926,9 +77404,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Têt"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -78965,7 +79441,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhin"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -79386,8 +79864,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Rhin",
-        "Ill"
+        "Rhin"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -80417,9 +80894,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Ill"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -81112,7 +81587,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -81154,7 +81631,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -81259,7 +81738,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -81427,7 +81908,10 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône",
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -81637,7 +82121,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -81826,7 +82312,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "F",
@@ -81868,7 +82356,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -81931,7 +82421,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -81952,7 +82444,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -82141,10 +82635,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Rhône",
-        "Saône"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -82291,7 +82782,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -82312,7 +82805,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -82354,7 +82849,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "O",
@@ -82438,7 +82935,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "Q",
@@ -82543,7 +83042,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -82732,7 +83233,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -82753,7 +83256,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -82900,7 +83405,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -83089,7 +83596,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -83131,7 +83640,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -83152,7 +83663,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -83173,7 +83686,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -83320,7 +83835,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -83404,7 +83921,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -83425,7 +83944,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -83509,7 +84030,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -83719,7 +84242,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -83782,7 +84307,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83803,7 +84330,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83824,7 +84353,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83866,7 +84397,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83887,7 +84420,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83950,7 +84485,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -83971,7 +84508,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -84055,7 +84594,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -84139,7 +84680,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -84244,9 +84787,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Saône"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -84309,7 +84850,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -84605,7 +85148,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -84668,7 +85213,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Loire"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -84795,7 +85342,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Loire"
+        "Saône"
       ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
@@ -84859,7 +85406,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "O",
@@ -84922,7 +85471,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -84943,7 +85494,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -84964,7 +85517,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -85090,7 +85645,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Saône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -85678,10 +86235,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Sarthe",
-        "Huisne"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -86332,7 +86886,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -86353,7 +86909,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -86416,7 +86974,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -86500,7 +87060,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -86563,7 +87125,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -86731,7 +87295,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -86773,7 +87339,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -86815,7 +87383,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -86836,7 +87406,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -86920,7 +87492,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -86962,7 +87536,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -87004,7 +87580,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -87298,7 +87876,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Isère"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -87466,7 +88046,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "Y",
@@ -89041,7 +89623,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -89377,9 +89961,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89400,7 +89982,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89463,7 +90047,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89484,7 +90070,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89505,7 +90093,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89526,7 +90116,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89652,7 +90244,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89694,7 +90288,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89715,7 +90311,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -89820,7 +90418,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -89904,7 +90504,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -90072,7 +90674,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -90303,7 +90907,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -90324,7 +90930,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "E",
@@ -90660,9 +91268,7 @@
       "est_sous_prefecture": true,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Arques"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -91040,9 +91646,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -91105,7 +91709,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "O",
@@ -91632,7 +92238,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -91695,7 +92303,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -91779,7 +92389,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -91926,7 +92538,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -91947,7 +92561,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -92010,7 +92626,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -92094,7 +92712,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -92388,7 +93008,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -92430,7 +93052,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -92514,7 +93138,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "E",
@@ -92619,7 +93245,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -92682,7 +93310,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -92787,7 +93417,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "H",
@@ -92871,7 +93503,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -93039,7 +93673,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -93060,7 +93696,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -93102,7 +93740,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -93165,7 +93805,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -93249,7 +93891,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -93375,7 +94019,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -93438,7 +94084,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -93774,7 +94422,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -93858,7 +94508,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -93921,7 +94573,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -94068,7 +94722,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -94089,7 +94745,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -94215,7 +94873,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -94299,7 +94959,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -94320,7 +94982,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -94362,7 +95026,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -94614,7 +95280,10 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise",
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -94782,7 +95451,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -94866,7 +95537,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -94887,7 +95560,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -94971,7 +95646,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -95076,7 +95753,10 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise",
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -95097,7 +95777,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -95160,7 +95842,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -95559,7 +96243,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -95580,7 +96266,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -95622,7 +96310,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -95706,7 +96396,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -95727,7 +96419,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -95811,7 +96505,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -95958,7 +96654,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -96042,7 +96740,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -96147,7 +96847,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -96210,7 +96912,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -96252,7 +96956,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -96315,7 +97021,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -96441,7 +97149,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -96504,7 +97214,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -96630,9 +97342,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -96674,7 +97384,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -97682,9 +98394,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Somme"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -97915,7 +98625,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Somme"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "H",
@@ -98041,7 +98753,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Somme"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -98337,7 +99051,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -98400,7 +99116,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -98505,7 +99223,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -98526,7 +99246,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -98631,7 +99353,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -98673,7 +99397,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -98694,7 +99420,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -98715,7 +99443,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -98862,7 +99592,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -98946,7 +99678,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -98967,7 +99701,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -99177,7 +99913,10 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne",
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -99240,7 +99979,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -99261,7 +100002,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -99303,7 +100046,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -99345,7 +100090,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Tarn"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -99387,7 +100134,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Garonne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -100416,9 +101165,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Gapeau"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "H",
@@ -101363,9 +102110,7 @@
       "est_sous_prefecture": false,
       "est_littorale": true,
       "est_montagne": false,
-      "cours_eau": [
-        "Eygoutier"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -101617,7 +102362,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -101806,10 +102553,7 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Rhône",
-        "Sorgue"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -102334,7 +103078,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Rhône"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -104182,9 +104928,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Yon"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -104898,7 +105642,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -104961,7 +105707,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -104982,7 +105730,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -105024,7 +105774,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Charente"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -105066,7 +105818,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "D",
@@ -105486,10 +106240,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Vienne",
-        "Clain"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -105636,7 +106387,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -105825,7 +106578,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -105846,7 +106601,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -105951,7 +106708,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -106014,7 +106773,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -106056,7 +106817,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "E",
@@ -106098,7 +106861,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -106184,7 +106949,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -106205,7 +106972,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -106289,7 +107058,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -106331,7 +107102,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -106352,7 +107125,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -106415,7 +107190,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Vienne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -106562,7 +107339,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -106625,7 +107404,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -106732,7 +107513,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -106858,7 +107641,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": true,
-      "cours_eau": [],
+      "cours_eau": [
+        "Meuse"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -106942,7 +107727,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -107005,7 +107792,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -107047,7 +107836,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -107131,7 +107922,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "T",
@@ -107152,7 +107945,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Moselle"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -108097,7 +108892,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -108517,7 +109314,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -108538,7 +109337,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -108749,7 +109550,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Essonne"
+        "Seine"
       ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
@@ -108897,7 +109698,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -108981,7 +109784,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -109611,7 +110416,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -109863,7 +110670,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -110241,7 +111050,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -110411,9 +111222,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -110434,7 +111243,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -110476,7 +111287,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -110581,7 +111394,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -110602,7 +111417,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -110686,7 +111503,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -110751,7 +111570,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -110772,7 +111593,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "R",
@@ -110793,7 +111616,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -110856,7 +111681,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "S",
@@ -110940,7 +111767,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -111255,7 +112084,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "G",
@@ -111276,7 +112107,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -111423,7 +112256,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -111612,7 +112447,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -111780,7 +112617,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -111801,7 +112640,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -111885,7 +112726,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -111927,7 +112770,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -111969,7 +112814,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -112012,7 +112859,7 @@
       "est_littorale": false,
       "est_montagne": false,
       "cours_eau": [
-        "Marne"
+        "Seine"
       ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
@@ -112034,7 +112881,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -112139,7 +112988,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "I",
@@ -112160,7 +113011,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -112181,9 +113034,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -112225,7 +113076,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "M",
@@ -112288,7 +113141,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "N",
@@ -112393,7 +113248,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -112498,7 +113355,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -112519,7 +113378,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Marne"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -112666,7 +113527,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -112729,9 +113592,7 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [
-        "Seine"
-      ],
+      "cours_eau": [],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -112752,7 +113613,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
@@ -112794,7 +113657,9 @@
       "est_sous_prefecture": true,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -112857,7 +113722,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "A",
@@ -112920,7 +113787,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -112962,7 +113831,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -113004,7 +113875,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -113088,7 +113961,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "B",
@@ -113109,7 +113984,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -113130,7 +114007,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -113193,7 +114072,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "C",
@@ -113361,7 +114242,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "É",
@@ -113508,7 +114391,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "L",
@@ -113613,7 +114498,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Seine"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "H",
@@ -113655,7 +114542,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "J",
@@ -114012,7 +114901,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -114096,7 +114987,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "P",
@@ -114264,7 +115157,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": true,
       "nom_commence_saint": true,
       "nom_premiere_lettre": "S",
@@ -114453,7 +115348,9 @@
       "est_sous_prefecture": false,
       "est_littorale": false,
       "est_montagne": false,
-      "cours_eau": [],
+      "cours_eau": [
+        "Oise"
+      ],
       "nom_avec_tiret": false,
       "nom_commence_saint": false,
       "nom_premiere_lettre": "V",
