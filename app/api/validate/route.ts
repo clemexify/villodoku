@@ -58,6 +58,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ valid: false, reason: "already_used" });
   }
 
+  // Rang relatif : position dans la liste triée par population décroissante
+  // (0 = ville la plus connue/commune, total-1 = la plus rare/obscure)
+  const sorted = [...cell.solutions].sort((a, b) => b.population - a.population);
+  const solutionRank = sorted.findIndex((s) => s.code_commune === codeCommune);
+
   return NextResponse.json({
     valid: true,
     commune: {
@@ -66,5 +71,7 @@ export async function POST(request: Request) {
       departement_nom: commune.departement_nom,
       population: commune.population,
     },
+    solutionRank,
+    solutionsCount: cell.solutions.length,
   });
 }

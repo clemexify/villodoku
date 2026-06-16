@@ -45,9 +45,28 @@ export function getScoreRank(score: number): string {
 }
 
 /**
- * Score (sur 1000/9) obtenu pour une case selon la rareté de la ville
- * choisie par rapport à la rareté maximale possible pour cette case.
+ * Rareté relative d'une ville dans le contexte d'une case précise.
+ * rank  : position dans la liste triée par population décroissante (0 = ville la plus connue)
+ * total : nombre total de solutions valides pour cette case
  */
+export function getRarityInfoFromRank(rank: number, total: number): RarityInfo {
+  const rel = total <= 1 ? 0 : rank / (total - 1);
+  if (rel >= 0.8) return { tier: 4, label: "Très rare",    badgeClass: "bg-violet-700 text-white" };
+  if (rel >= 0.6) return { tier: 3, label: "Rare",         badgeClass: "bg-violet-500 text-white" };
+  if (rel >= 0.4) return { tier: 2, label: "Peu commun",   badgeClass: "bg-violet-300 text-violet-900" };
+  if (rel >= 0.2) return { tier: 1, label: "Commun",       badgeClass: "bg-violet-200 text-violet-800" };
+  return              { tier: 0, label: "Très commun",  badgeClass: "bg-violet-100 text-violet-700" };
+}
+
+/**
+ * Score (sur 1000/9) pour une case selon le rang relatif de la ville choisie.
+ */
+export function cellScoreFromRank(rank: number, total: number): number {
+  const rel = total <= 1 ? 0 : rank / (total - 1);
+  return rel * (MAX_SCORE / 9);
+}
+
+/** @deprecated Utiliser cellScoreFromRank */
 export function cellScore(chosenTier: number, maxTier: number): number {
   const maxCellScore = MAX_SCORE / 9;
   if (maxTier <= 0) return maxCellScore;

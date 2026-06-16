@@ -18,14 +18,12 @@ export default function VillodokuApp({
   initialRows,
   initialCols,
   initialSolutionsCounts,
-  initialMaxRarityTiers,
 }: {
   today: string;
   initialSelectedDate: string;
   initialRows: CriterionInfo[];
   initialCols: CriterionInfo[];
   initialSolutionsCounts: number[][];
-  initialMaxRarityTiers: number[][];
 }) {
   const [rulesOpen, setRulesOpen] = useState(false);
   const [streak, setStreak] = useState(0);
@@ -76,7 +74,6 @@ export default function VillodokuApp({
           rows={initialRows}
           cols={initialCols}
           solutionsCounts={initialSolutionsCounts}
-          maxRarityTiers={initialMaxRarityTiers}
           onErrorsChange={setErrors}
           onGameEnd={handleGameEnd}
         />

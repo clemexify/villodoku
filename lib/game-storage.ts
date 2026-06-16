@@ -7,6 +7,10 @@ export type CellStatus = "empty" | "correct" | "incorrect";
 export interface CellState {
   status: CellStatus;
   commune?: CommuneOption;
+  /** Position dans la liste triée par population décroissante (0 = ville la plus connue) */
+  solutionRank?: number;
+  /** Nombre total de solutions valides pour cette case */
+  solutionsCount?: number;
 }
 
 export interface SavedGameState {

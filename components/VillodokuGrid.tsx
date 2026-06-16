@@ -9,8 +9,9 @@ import {
   type CellState,
   type SavedGameState,
 } from "@/lib/game-storage";
-import { cellScore, getRarityInfo } from "@/lib/rarity";
+import { getRarityInfo, getRarityInfoFromRank, cellScoreFromRank } from "@/lib/rarity";
 import ScoreGauge from "./ScoreGauge";
+import SolutionsModal from "./SolutionsModal";
 
 export interface CriterionInfo {
   id: string;
@@ -33,7 +34,6 @@ export default function VillodokuGrid({
   rows,
   cols,
   solutionsCounts,
-  maxRarityTiers,
   onStateChange,
   onErrorsChange,
   onGameEnd,
@@ -42,7 +42,6 @@ export default function VillodokuGrid({
   rows: CriterionInfo[];
   cols: CriterionInfo[];
   solutionsCounts: number[][];
-  maxRarityTiers: number[][];
   onStateChange?: () => void;
   onErrorsChange?: (errors: number) => void;
   onGameEnd?: (date: string) => void;
@@ -50,6 +49,7 @@ export default function VillodokuGrid({
   const storageKey = gameStorageKey(date);
   const [cells, setCells] = useState<CellState[][]>(emptyCells);
   const [errors, setErrors] = useState(0);
+  const [showSolutions, setShowSolutions] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [activeCell, setActiveCell] = useState<{ row: number; col: number } | null>(null);
 
@@ -89,10 +89,14 @@ export default function VillodokuGrid({
   const locked = gameOver || won;
 
   const score = Math.round(
-    cells.flat().reduce((sum, cell, idx) => {
-      if (cell.status !== "correct" || !cell.commune) return sum;
-      const tier = getRarityInfo(cell.commune.population).tier;
-      return sum + cellScore(tier, maxRarityTiers[Math.floor(idx / 3)][idx % 3]);
+    cells.flat().reduce((sum, cell) => {
+      if (cell.status !== "correct") return sum;
+      if (cell.solutionRank !== undefined && cell.solutionsCount !== undefined) {
+        return sum + cellScoreFromRank(cell.solutionRank, cell.solutionsCount);
+      }
+      // Fallback pour les parties sauvegardées sans rang (ancien format)
+      if (cell.commune) return sum + cellScoreFromRank(0, 1);
+      return sum;
     }, 0),
   );
 
@@ -120,7 +124,12 @@ export default function VillodokuGrid({
     if (data.valid) {
       setCells((prev) => {
         const next = prev.map((r) => r.map((c) => ({ ...c })));
-        next[row][col] = { status: "correct", commune: data.commune };
+        next[row][col] = {
+          status: "correct",
+          commune: data.commune,
+          solutionRank: data.solutionRank,
+          solutionsCount: data.solutionsCount,
+        };
         return next;
       });
       setActiveCell(null);
@@ -184,13 +193,19 @@ export default function VillodokuGrid({
                       <span className={nameSizeClass(cell.commune?.nom_commune ?? "")}>
                         {cell.commune?.nom_commune}
                       </span>
-                      {cell.commune && (
-                        <span
-                          className={`whitespace-nowrap rounded-full px-1 py-0.5 text-[8px] font-semibold sm:text-[10px] ${getRarityInfo(cell.commune.population).badgeClass}`}
-                        >
-                          {getRarityInfo(cell.commune.population).label}
-                        </span>
-                      )}
+                      {cell.commune && (() => {
+                        const rarity =
+                          cell.solutionRank !== undefined && cell.solutionsCount !== undefined
+                            ? getRarityInfoFromRank(cell.solutionRank, cell.solutionsCount)
+                            : getRarityInfo(cell.commune.population);
+                        return (
+                          <span
+                            className={`whitespace-nowrap rounded-full px-1 py-0.5 text-[8px] font-semibold sm:text-[10px] ${rarity.badgeClass}`}
+                          >
+                            {rarity.label}
+                          </span>
+                        );
+                      })()}
                     </>
                   ) : cell.status === "incorrect" ? (
                     "✕"
@@ -210,6 +225,15 @@ export default function VillodokuGrid({
       {gameOver && <p className="text-red-600 font-semibold">Partie terminée ({MAX_ERRORS} erreurs)</p>}
       {won && <p className="text-green-600 font-semibold">Bravo, grille complétée !</p>}
 
+      {(won || gameOver) && (
+        <button
+          onClick={() => setShowSolutions(true)}
+          className="w-full max-w-xl rounded-xl border border-indigo-200 bg-indigo-50 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100"
+        >
+          Voir les réponses possibles →
+        </button>
+      )}
+
       {activeCell && (
         <CellModal
           rowLabel={rows[activeCell.row].label}
@@ -217,6 +241,16 @@ export default function VillodokuGrid({
           solutionsCount={solutionsCounts[activeCell.row][activeCell.col]}
           onSelect={(opt) => handleSelect(activeCell.row, activeCell.col, opt)}
           onClose={() => setActiveCell(null)}
+        />
+      )}
+
+      {showSolutions && (
+        <SolutionsModal
+          date={date}
+          rows={rows}
+          cols={cols}
+          playerCells={cells}
+          onClose={() => setShowSolutions(false)}
         />
       )}
     </div>
