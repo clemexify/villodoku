@@ -1,12 +1,12 @@
 import { getDailyGrid } from "@/lib/daily-grid";
-import { lastNDates } from "@/lib/game-storage";
+import { LAUNCH_DATE, datesSinceLaunch } from "@/lib/game-storage";
 import VillodokuApp from "@/components/VillodokuApp";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ date?: string }> }) {
   const today = new Date().toISOString().slice(0, 10);
   const { date } = await searchParams;
 
-  const availableDates = new Set(lastNDates(today, 7));
+  const availableDates = new Set(datesSinceLaunch(today));
   const selectedDate = date && /^\d{4}-\d{2}-\d{2}$/.test(date) && availableDates.has(date) ? date : today;
 
   const grid = getDailyGrid(selectedDate);

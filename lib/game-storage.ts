@@ -93,3 +93,17 @@ export function lastNDates(referenceDate: string, n: number): string[] {
   }
   return result;
 }
+
+/** Date de lancement du jeu. */
+export const LAUNCH_DATE = "2026-06-15";
+
+/** Toutes les dates jouables depuis le lancement jusqu'à `today` inclus, du plus ancien au plus récent. */
+export function datesSinceLaunch(today: string): string[] {
+  const result: string[] = [];
+  const start = new Date(`${LAUNCH_DATE}T00:00:00Z`);
+  const end = new Date(`${today}T00:00:00Z`);
+  for (const d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+    result.push(d.toISOString().slice(0, 10));
+  }
+  return result;
+}

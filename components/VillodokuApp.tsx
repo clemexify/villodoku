@@ -82,7 +82,7 @@ export default function VillodokuApp({
           href="/historique"
           className="rounded-full border border-gray-200 bg-white px-5 py-2 text-sm font-semibold text-gray-600 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
         >
-          Grilles précédentes
+          Jouer aux grilles précédentes
         </Link>
 
         <div className="w-full max-w-xl px-4">

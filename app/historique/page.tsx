@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import RulesModal from "@/components/RulesModal";
 import { formatLongDate } from "@/lib/date-format";
-import { getDayStatus, getStreak, lastNDates, type DayStatus } from "@/lib/game-storage";
+import { getDayStatus, getStreak, datesSinceLaunch, type DayStatus } from "@/lib/game-storage";
 
 const RULES_SEEN_KEY = "villodoku-rules-seen";
 
@@ -32,8 +32,8 @@ export default function HistoriquePage() {
   useEffect(() => {
     setStreak(getStreak().current);
     const today = new Date().toISOString().slice(0, 10);
-    const previousDays = lastNDates(today, 7)
-      .slice(0, -1)
+    const previousDays = datesSinceLaunch(today)
+      .filter((d) => d !== today)
       .reverse();
     setDays(previousDays.map((date) => ({ date, status: getDayStatus(date) })));
   }, []);
