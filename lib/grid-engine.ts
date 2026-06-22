@@ -81,8 +81,9 @@ const MIN_CANDIDATES = {
 };
 
 // Catégories privilégiées pour la génération des grilles : on tire les 6
-// critères d'une grille en priorité parmi celles-ci (cf. demande de test
-// avec les nouveaux critères mer/frontière).
+// critères d'une grille en priorité parmi celles-ci.
+// "tiret" a été retiré de cette liste et intégré dans "nom" pour éviter
+// qu'il revienne dans toutes les grilles.
 const PRIORITY_CATEGORIES = [
   'letter',
   'region',
@@ -91,9 +92,10 @@ const PRIORITY_CATEGORIES = [
   'population',
   'mer',
   'frontiere',
-  'tiret',
+  'nom',
   'montagne',
   'river',
+  'sous_prefecture',
 ];
 
 /**
@@ -116,6 +118,12 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       label: 'Entre 20 000 et 100 000 habitants',
       category: 'population',
       test: (c) => c.population >= 20000 && c.population < 100000,
+    },
+    {
+      id: 'pop_small',
+      label: 'Entre 5 000 et 20 000 habitants',
+      category: 'population',
+      test: (c) => c.population >= 5000 && c.population < 20000,
     },
   ]);
 
@@ -212,12 +220,45 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
     },
   ]);
 
-  pool.set('tiret', [
+  // Critères basés sur la forme du nom — regroupés en une seule catégorie
+  // pour éviter que plusieurs critères de ce type coexistent dans une grille.
+  // Tiret est intégré ici (plus dans sa propre catégorie) pour réduire sa fréquence.
+  pool.set('nom', [
     {
       id: 'tiret',
       label: 'Nom avec un tiret',
-      category: 'tiret',
+      category: 'nom',
       test: (c) => c.nom_avec_tiret,
+    },
+    {
+      id: 'nom_article',
+      label: 'Nom commençant par Le, La, Les ou L\'',
+      category: 'nom',
+      test: (c) => /^(Le |La |Les |L')/.test(c.nom_commune),
+    },
+    {
+      id: 'nom_sur',
+      label: 'Nom contenant « -sur- »',
+      category: 'nom',
+      test: (c) => c.nom_commune.includes('-sur-'),
+    },
+    {
+      id: 'nom_en',
+      label: 'Nom contenant « -en- »',
+      category: 'nom',
+      test: (c) => c.nom_commune.includes('-en-'),
+    },
+    {
+      id: 'nom_long',
+      label: 'Nom de plus de 15 caractères',
+      category: 'nom',
+      test: (c) => c.nom_commune.length > 15,
+    },
+    {
+      id: 'nom_court',
+      label: 'Nom de 4 lettres ou moins',
+      category: 'nom',
+      test: (c) => c.nom_commune.replace(/[-'\s]/g, '').length <= 4,
     },
   ]);
 
@@ -413,9 +454,16 @@ export function generateGrid(
       const reqCriterion = pick(reqPool, rng);
 
       const candidateCats = pickFrom.filter((c) => c !== requiredCategory && c !== 'region');
+      // Pour un département, le nom du fleuve homonyme à exclure (ex: dept_Rhône → exclure river_Rhône)
+      const deptHomonymeRiverId =
+        requiredCategory === 'departement'
+          ? `river_${reqCriterion.id.replace('dept_', '')}`
+          : null;
+
       const compatGroups: Array<{ cat: string; crit: Criterion[] }> = [];
       for (const cat of candidateCats) {
         const compat = (criteriaPool.get(cat) ?? []).filter((crit) => {
+          if (deptHomonymeRiverId && crit.id === deptHomonymeRiverId) return false;
           const sols = communes.filter((co) => reqCriterion.test(co) && crit.test(co));
           return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune));
         });
@@ -442,6 +490,12 @@ export function generateGrid(
       const hasRegion = criteria.some((c) => c.category === 'region');
       const hasDept = criteria.some((c) => c.category === 'departement');
       if (hasRegion && hasDept) continue;
+
+      // Bloque fleuve × département homonyme (ex: "Traversée par Rhône" × "Département Rhône")
+      // qui est redondant et culturellement confus.
+      const riverCrit = criteria.find((c) => c.category === 'river');
+      const deptCrit = criteria.find((c) => c.category === 'departement');
+      if (riverCrit && deptCrit && deptCrit.id === `dept_${riverCrit.id.replace('river_', '')}`) continue;
 
       const shuffled = shuffle(criteria, rng);
       rows = shuffled.slice(0, 3);
