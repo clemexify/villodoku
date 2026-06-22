@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import { track } from "@vercel/analytics";
 import CellModal from "./CellModal";
 import type { CommuneOption } from "@/lib/communes-search";
 import {
@@ -100,11 +101,20 @@ export default function VillodokuGrid({
     }, 0),
   );
 
-  // Signale la fin de partie (gagnée ou perdue) pour le streak
+  // Signale la fin de partie (gagnée ou perdue) pour le streak + analytics
   useEffect(() => {
     if (!loaded) return;
-    if (won || gameOver) onGameEnd?.(date);
-  }, [won, gameOver, loaded, date, onGameEnd]);
+    const today = new Date().toISOString().slice(0, 10);
+    if (won) {
+      onGameEnd?.(date);
+      track("game_won", { score, errors, is_today: date === today });
+    } else if (gameOver) {
+      onGameEnd?.(date);
+      track("game_over", { cells_solved: solvedCount, errors, is_today: date === today });
+    }
+  // score et solvedCount ne changent plus une fois la partie terminée
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [won, gameOver, loaded]);
 
   async function handleSelect(row: number, col: number, option: CommuneOption) {
     if (locked || cells[row][col].status === "correct") return;
