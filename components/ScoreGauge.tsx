@@ -1,6 +1,7 @@
 import { MAX_SCORE, getScoreRank } from "@/lib/rarity";
 
-const CAPS = [200, 400, 600, 800];
+// Repères visuels à 25 / 50 / 75 % de la barre
+const CAPS = [25, 50, 75];
 
 export default function ScoreGauge({ score }: { score: number }) {
   const percent = Math.min(100, (score / MAX_SCORE) * 100);
@@ -19,7 +20,7 @@ export default function ScoreGauge({ score }: { score: number }) {
           style={{ width: `${percent}%` }}
         />
         {CAPS.map((cap) => (
-          <div key={cap} className="absolute top-0 h-full w-0.5 bg-white/70" style={{ left: `${cap / 10}%` }} />
+          <div key={cap} className="absolute top-0 h-full w-0.5 bg-white/70" style={{ left: `${cap}%` }} />
         ))}
       </div>
       <p className="text-center text-[11px] text-gray-400">

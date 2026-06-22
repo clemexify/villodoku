@@ -26,14 +26,14 @@ export function getRarityInfo(population: number): RarityInfo {
   return RARITY_SCALE[RARITY_SCALE.length - 1];
 }
 
-export const MAX_SCORE = 1000;
+export const MAX_SCORE = 100;
 
 /** Paliers de niveau affichés sous la jauge de score, du plus haut au plus bas */
 const SCORE_RANKS: { minScore: number; label: string }[] = [
-  { minScore: 800, label: "Maître" },
-  { minScore: 600, label: "Expert" },
-  { minScore: 400, label: "Confirmé" },
-  { minScore: 200, label: "Amateur" },
+  { minScore: 85, label: "Maître" },
+  { minScore: 70, label: "Expert" },
+  { minScore: 55, label: "Confirmé" },
+  { minScore: 30, label: "Amateur" },
   { minScore: 0, label: "Novice" },
 ];
 
@@ -59,11 +59,13 @@ export function getRarityInfoFromRank(rank: number, total: number): RarityInfo {
 }
 
 /**
- * Score (sur 1000/9) pour une case selon le rang relatif de la ville choisie.
+ * Score (sur 100) pour une case selon le rang relatif de la ville choisie.
+ * 50 pts sont répartis à parts égales entre les 9 cases (base "j'ai trouvé une ville"),
+ * 50 pts supplémentaires récompensent la rareté relative (0 = plus peuplée, 1 = plus rare).
  */
 export function cellScoreFromRank(rank: number, total: number): number {
   const rel = total <= 1 ? 0 : rank / (total - 1);
-  return rel * (MAX_SCORE / 9);
+  return (MAX_SCORE / 9) * (0.5 + 0.5 * rel);
 }
 
 /** @deprecated Utiliser cellScoreFromRank */
