@@ -25,7 +25,7 @@ export default function CellModal({
   }, []);
 
   useEffect(() => {
-    if (query.trim().length < 2) {
+    if (query.trim().length < 3) {
       setOptions([]);
       return;
     }
@@ -86,11 +86,11 @@ export default function CellModal({
                 onClick={() => onSelect(opt)}
                 className="w-full rounded-lg px-3 py-2 text-left hover:bg-indigo-50"
               >
-                {opt.nom_commune} <span className="text-gray-400">({opt.departement_nom})</span>
+                {opt.nom_commune}
               </button>
             </li>
           ))}
-          {query.trim().length >= 2 && options.length === 0 && (
+          {query.trim().length >= 3 && options.length === 0 && (
             <li className="px-3 py-2 text-sm text-gray-400">Aucun résultat</li>
           )}
         </ul>

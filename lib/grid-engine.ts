@@ -95,7 +95,6 @@ const PRIORITY_CATEGORIES = [
   'nom',
   'montagne',
   'river',
-  'sous_prefecture',
 ];
 
 /**
