@@ -23,7 +23,7 @@ export default function ScoreGauge({ score }: { score: number }) {
         ))}
       </div>
       <p className="text-center text-[11px] text-gray-400">
-        Plus la ville trouvée est <span className="font-semibold text-violet-500">peu peuplée</span> parmi les réponses valides, plus tu marques de points.
+        Moins la ville trouvée est <span className="font-semibold text-violet-500">peuplée</span> parmi les réponses valides, plus tu marques de points.
       </p>
     </div>
   );
