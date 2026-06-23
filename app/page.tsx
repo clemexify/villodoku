@@ -2,6 +2,8 @@ import { getDailyGrid } from "@/lib/daily-grid";
 import { LAUNCH_DATE, datesSinceLaunch } from "@/lib/game-storage";
 import VillodokuApp from "@/components/VillodokuApp";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home({ searchParams }: { searchParams: Promise<{ date?: string }> }) {
   const today = new Date().toISOString().slice(0, 10);
   const { date } = await searchParams;
