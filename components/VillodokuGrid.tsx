@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
+import { startSession, completeSession } from "@/lib/session-tracking";
 import CellModal from "./CellModal";
 import type { CommuneOption } from "@/lib/communes-search";
 import {
@@ -69,7 +70,8 @@ export default function VillodokuGrid({
       // ignore les états sauvegardés corrompus
     }
     setLoaded(true);
-  }, [storageKey]);
+    startSession(date); // fire & forget
+  }, [storageKey, date]);
 
   // Sauvegarde la partie à chaque changement
   useEffect(() => {
@@ -108,9 +110,11 @@ export default function VillodokuGrid({
     if (won) {
       onGameEnd?.(date);
       track("game_won", { score, errors, is_today: date === today });
+      completeSession(date, "won", score, errors, cells); // fire & forget
     } else if (gameOver) {
       onGameEnd?.(date);
       track("game_over", { cells_solved: solvedCount, errors, is_today: date === today });
+      completeSession(date, "lost", score, errors, cells); // fire & forget
     }
   // score et solvedCount ne changent plus une fois la partie terminée
   // eslint-disable-next-line react-hooks/exhaustive-deps
