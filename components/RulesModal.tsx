@@ -23,9 +23,14 @@ export default function RulesModal({ onClose }: { onClose: (dontShowAgain: boole
             <strong>critère de colonne</strong> (ex : « Préfecture » × « Commence par la lettre B »).
           </li>
           <li>
-            Trouve une <strong>ville</strong> (une commune française de plus de 2 000 habitants) qui
-            correspond aux deux critères, en t&apos;aidant de l&apos;autocomplétion. Chaque ville ne peut
-            être utilisée <strong>qu&apos;une seule fois</strong>.
+            Trouve une <strong>ville</strong>{" "}(une des <strong>5 500 communes françaises</strong> de plus de
+            2 000 habitants) qui correspond aux deux critères, en t&apos;aidant de l&apos;autocomplétion.
+            Chaque ville ne peut être utilisée <strong>qu&apos;une seule fois</strong>.
+          </li>
+          <li>
+            Le <strong>score final</strong> dépend de ta capacité à trouver les villes les{" "}
+            <strong>moins peuplées</strong> parmi les solutions possibles : plus la ville est petite, plus
+            elle rapporte de points.
           </li>
           <li>
             Tu as droit à <strong>{MAX_ERRORS} erreurs</strong> maximum avant la fin de la partie.
