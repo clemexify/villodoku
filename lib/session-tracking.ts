@@ -15,9 +15,10 @@ function getUserId(): string {
 /** Crée une session au démarrage (si pas déjà existante pour cette grille). */
 export async function startSession(gridDate: string): Promise<void> {
   const userId = getUserId();
-  await supabase
+  const { error } = await supabase
     .from("game_sessions")
     .upsert({ user_id: userId, grid_date: gridDate }, { onConflict: "user_id,grid_date", ignoreDuplicates: true });
+  if (error) console.error("[supabase] startSession:", error.message, error.details);
 }
 
 /** Upsert la session à la fin de la partie (fonctionne même si startSession n'a pas encore fini). */
@@ -39,7 +40,7 @@ export async function completeSession(
     }))
   );
 
-  await supabase
+  const { error } = await supabase
     .from("game_sessions")
     .upsert(
       {
@@ -53,4 +54,5 @@ export async function completeSession(
       },
       { onConflict: "user_id,grid_date" }
     );
+  if (error) console.error("[supabase] completeSession:", error.message, error.details);
 }
