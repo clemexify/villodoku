@@ -62,6 +62,8 @@ export interface GridGenOptions {
   minSolutionsPerCell?: number;
   /** Codes commune des villes "connues du grand public" (cf. getWellKnownCityCodes) */
   topVilleCodes: Set<string>;
+  /** Si fourni, chaque case doit avoir au moins une solution dans ce set (villes "gateway" très connues) */
+  gatewayCodes?: Set<string>;
   /** Nombre maximum de tentatives avant d'abandonner (défaut: 5000) */
   maxAttempts?: number;
   /**
@@ -425,7 +427,7 @@ export function generateGrid(
   rng: () => number,
   options: GridGenOptions
 ): Grid | null {
-  const { minSolutionsPerCell = 3, topVilleCodes, maxAttempts = 5000, requiredCategory } = options;
+  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory } = options;
 
   const categories = Array.from(criteriaPool.keys()).filter(
     (cat) => (criteriaPool.get(cat) ?? []).length > 0
@@ -464,7 +466,7 @@ export function generateGrid(
         const compat = (criteriaPool.get(cat) ?? []).filter((crit) => {
           if (deptHomonymeRiverId && crit.id === deptHomonymeRiverId) return false;
           const sols = communes.filter((co) => reqCriterion.test(co) && crit.test(co));
-          return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune));
+          return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune)) && (!gatewayCodes || sols.some((s) => gatewayCodes.has(s.code_commune)));
         });
         if (compat.length > 0) compatGroups.push({ cat, crit: compat });
       }
@@ -513,6 +515,10 @@ export function generateGrid(
           break;
         }
         if (!solutions.some((s) => topVilleCodes.has(s.code_commune))) {
+          valid = false;
+          break;
+        }
+        if (gatewayCodes && !solutions.some((s) => gatewayCodes.has(s.code_commune))) {
           valid = false;
           break;
         }

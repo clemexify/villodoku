@@ -11,6 +11,7 @@ import {
 
 let cachedPool: Map<string, Criterion[]> | null = null;
 let cachedTopVilleCodes: Set<string> | null = null;
+let cachedGatewayCodes: Set<string> | null = null;
 const gridCache = new Map<string, Grid | null>();
 
 function getPool(): Map<string, Criterion[]> {
@@ -21,6 +22,11 @@ function getPool(): Map<string, Criterion[]> {
 function getTopVilleCodes(): Set<string> {
   if (!cachedTopVilleCodes) cachedTopVilleCodes = getWellKnownCityCodes(loadCommunes(), 1000);
   return cachedTopVilleCodes;
+}
+
+function getGatewayCodes(): Set<string> {
+  if (!cachedGatewayCodes) cachedGatewayCodes = getWellKnownCityCodes(loadCommunes(), 300);
+  return cachedGatewayCodes;
 }
 
 // À partir de cette date, les grilles sont générées avec des critères plus accessibles.
@@ -42,9 +48,12 @@ export function getDailyGrid(date: string): Grid | null {
     const seed = seedFromString(date) >>> 0;
     let grid: Grid | null = null;
 
+    const gatewayCodes = easyMode ? getGatewayCodes() : undefined;
+
     if (seed % 4 === 0) {
       grid = generateGrid(communes, pool, rng, {
         topVilleCodes,
+        gatewayCodes,
         minSolutionsPerCell,
         requiredCategory: 'departement',
         maxAttempts: 2000,
@@ -52,7 +61,7 @@ export function getDailyGrid(date: string): Grid | null {
     }
 
     if (!grid) {
-      grid = generateGrid(communes, pool, rng, { topVilleCodes, minSolutionsPerCell });
+      grid = generateGrid(communes, pool, rng, { topVilleCodes, gatewayCodes, minSolutionsPerCell });
     }
 
     gridCache.set(date, grid);
