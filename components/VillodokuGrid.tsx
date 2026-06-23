@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
 import { startSession, completeSession } from "@/lib/session-tracking";
+import { todayParis } from "@/lib/date-format";
 import CellModal from "./CellModal";
 import type { CommuneOption } from "@/lib/communes-search";
 import {
@@ -106,7 +107,7 @@ export default function VillodokuGrid({
   // Signale la fin de partie (gagnée ou perdue) pour le streak + analytics
   useEffect(() => {
     if (!loaded) return;
-    const today = new Date().toISOString().slice(0, 10);
+    const today = todayParis();
     if (won) {
       onGameEnd?.(date);
       track("game_won", { score, errors, is_today: date === today });
