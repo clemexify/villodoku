@@ -75,6 +75,9 @@ export default function CellModal({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Tape le nom d'une ville..."
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
           className="w-full rounded-lg border border-gray-300 p-3 text-base text-gray-900 placeholder:text-gray-400 outline-none focus:border-indigo-500"
         />
 
@@ -83,7 +86,7 @@ export default function CellModal({
             <li key={opt.code_commune}>
               <button
                 type="button"
-                onClick={() => onSelect(opt)}
+                onMouseDown={(e) => { e.preventDefault(); onSelect(opt); }}
                 className="w-full rounded-lg px-3 py-2 text-left hover:bg-indigo-50"
               >
                 {opt.nom_commune}
