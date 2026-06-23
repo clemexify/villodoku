@@ -47,29 +47,24 @@ export default function MentionsLegales() {
           Propriété intellectuelle et données
         </h2>
         <p>
-          Les données communales (population, découpage administratif, préfectures, etc.)
-          proviennent du Code Officiel Géographique de l&apos;INSEE, distribué via le paquet{" "}
-          <a
-            href="https://github.com/etalab/decoupage-administratif"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-600 hover:underline"
-          >
-            @etalab/decoupage-administratif
-          </a>{" "}
-          (Etalab, Licence Ouverte / Open Licence). Villodoku n&apos;est affilié ni à l&apos;INSEE,
-          ni à Etalab, ni à aucune collectivité territoriale.
+          Les données communales utilisées dans ce jeu (population, découpage administratif,
+          préfectures, régions, etc.) sont issues du{" "}
+          <strong>Code Officiel Géographique (COG) 2026 de l&apos;INSEE</strong>, publié sous
+          Licence Ouverte / Open Licence v2.0. Les données d&apos;altitude proviennent du modèle
+          numérique de terrain SRTM 90m (NASA, domaine public). Les données de cours d&apos;eau
+          sont issues d&apos;{" "}
+          <strong>© les contributeurs OpenStreetMap</strong>, sous licence ODbL.
         </p>
         <p>
-          Le nom « Villodoku », son interface et son code sont la propriété de leur auteur, sauf
-          mention contraire. Toute reproduction du code source est soumise aux termes de la
-          licence du dépôt associé.
+          Villodoku n&apos;est affilié ni à l&apos;INSEE, ni à OpenStreetMap, ni à aucune
+          collectivité territoriale. Le nom « Villodoku », son interface et son code sont la
+          propriété de leur auteur.
         </p>
       </section>
 
       <section className="space-y-2">
         <h2 className="font-display text-xl font-semibold text-gray-900">
-          Données personnelles et cookies
+          Données personnelles et mesure d&apos;audience
         </h2>
         <p>
           Villodoku ne nécessite aucune création de compte. La progression de la partie en cours,
@@ -78,8 +73,9 @@ export default function MentionsLegales() {
           (localStorage) et ne sont jamais transmis à un serveur ni partagés avec un tiers.
         </p>
         <p>
-          Aucun cookie de suivi ni outil d&apos;analyse publicitaire n&apos;est utilisé sur ce
-          site.
+          Ce site utilise <strong>Vercel Analytics</strong> pour mesurer l&apos;audience de façon
+          agrégée (pages vues, événements de fin de partie). Cet outil ne dépose aucun cookie et
+          ne collecte aucune donnée personnelle identifiante.
         </p>
       </section>
 
