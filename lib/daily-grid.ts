@@ -23,6 +23,9 @@ function getTopVilleCodes(): Set<string> {
   return cachedTopVilleCodes;
 }
 
+// À partir de cette date, les grilles sont générées avec des critères plus accessibles.
+const EASY_MODE_START = "2026-06-24";
+
 /** Grille du jour pour `date` (YYYY-MM-DD), générée et mise en cache une seule fois. */
 export function getDailyGrid(date: string): Grid | null {
   if (!gridCache.has(date)) {
@@ -30,6 +33,9 @@ export function getDailyGrid(date: string): Grid | null {
     const pool = getPool();
     const topVilleCodes = getTopVilleCodes();
     const rng = mulberry32(seedFromString(date));
+
+    const easyMode = date >= EASY_MODE_START;
+    const minSolutionsPerCell = easyMode ? 8 : 3;
 
     // Priorité tournante : 1 date sur 4, on essaie d'abord un critère "département".
     // Cela garantit que ce critère apparaît régulièrement tout en maintenant la diversité.
@@ -39,13 +45,14 @@ export function getDailyGrid(date: string): Grid | null {
     if (seed % 4 === 0) {
       grid = generateGrid(communes, pool, rng, {
         topVilleCodes,
+        minSolutionsPerCell,
         requiredCategory: 'departement',
         maxAttempts: 2000,
       });
     }
 
     if (!grid) {
-      grid = generateGrid(communes, pool, rng, { topVilleCodes });
+      grid = generateGrid(communes, pool, rng, { topVilleCodes, minSolutionsPerCell });
     }
 
     gridCache.set(date, grid);
