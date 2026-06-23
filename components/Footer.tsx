@@ -26,16 +26,7 @@ export default function Footer({ onShowRules }: { onShowRules: () => void }) {
         </div>
 
         <p className="text-xs text-gray-400">
-          © {year} Villodoku — Données communales issues du COG INSEE via{" "}
-          <a
-            href="https://github.com/etalab/decoupage-administratif"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-indigo-700"
-          >
-            @etalab/decoupage-administratif
-          </a>
-          . Jeu non affilié à l&apos;INSEE ni à aucune collectivité.
+          © {year} Villodoku — Sources : INSEE COG 2026 &amp; OpenStreetMap. Jeu non affilié à l&apos;INSEE ni à aucune collectivité.
         </p>
       </div>
     </footer>
