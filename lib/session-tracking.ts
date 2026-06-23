@@ -45,8 +45,14 @@ export async function completeSession(
   errors: number,
   cells: CellState[][]
 ): Promise<void> {
-  const sessionId = getSessionId(gridDate);
-  if (!sessionId) return;
+  let sessionId = getSessionId(gridDate);
+
+  // Si startSession avait échoué, on réessaie avant de mettre à jour
+  if (!sessionId) {
+    await startSession(gridDate);
+    sessionId = getSessionId(gridDate);
+    if (!sessionId) return;
+  }
 
   const cellsData = cells.map((row) =>
     row.map((cell) => ({
