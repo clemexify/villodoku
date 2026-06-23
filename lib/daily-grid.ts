@@ -60,8 +60,19 @@ export function getDailyGrid(date: string): Grid | null {
       });
     }
 
+    // Tentative avec gateway + minSolutions élevé
     if (!grid) {
       grid = generateGrid(communes, pool, rng, { topVilleCodes, gatewayCodes, minSolutionsPerCell });
+    }
+
+    // Fallback : sans contrainte gateway mais avec minSolutions élevé
+    if (!grid && easyMode) {
+      grid = generateGrid(communes, pool, rng, { topVilleCodes, minSolutionsPerCell });
+    }
+
+    // Fallback final : génération standard
+    if (!grid) {
+      grid = generateGrid(communes, pool, rng, { topVilleCodes });
     }
 
     gridCache.set(date, grid);
