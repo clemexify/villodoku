@@ -25,11 +25,11 @@ export default function MentionsLegales() {
       <section className="space-y-2">
         <h2 className="font-display text-xl font-semibold text-gray-900">Éditeur du site</h2>
         <p>
-          Villodoku est un projet personnel, édité et développé par Clément Cruchon.
+          Villodoku est un projet personnel, édité et développé par Clemexify.
           <br />
           Contact :{" "}
-          <a href="mailto:clement.cruchon@gmail.com" className="text-indigo-600 hover:underline">
-            clement.cruchon@gmail.com
+          <a href="mailto:clemex9@hotmail.com" className="text-indigo-600 hover:underline">
+            clemex9@hotmail.com
           </a>
         </p>
       </section>
