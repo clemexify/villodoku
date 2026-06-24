@@ -257,7 +257,7 @@ export default function DashboardClient({
 
         {/* Croisements en 4 quartiles */}
         {crossings.length > 0 ? (
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <CrossingQuartile title="Très faciles" color="#059669" bg="#f0fdf4" items={q1} />
             <CrossingQuartile title="Faciles" color="#0284c7" bg="#f0f9ff" items={q2} />
             <CrossingQuartile title="Difficiles" color="#d97706" bg="#fffbeb" items={q3} />
