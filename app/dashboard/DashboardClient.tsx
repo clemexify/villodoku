@@ -34,6 +34,13 @@ export type CrossingStat = {
   total: number;
 };
 
+export type Insight = {
+  type: "success" | "warning" | "danger" | "info";
+  title: string;
+  text: string;
+  recommendation: string;
+};
+
 export type GlobalStats = {
   total_sessions: number;
   total_unique_users: number;
@@ -81,11 +88,13 @@ export default function DashboardClient({
   cells,
   global: g,
   crossings,
+  insights,
 }: {
   days: DayStats[];
   cells: CellStat[];
   global: GlobalStats;
   crossings: CrossingStat[];
+  insights: Insight[];
 }) {
   const winRate = g.total_won + g.total_lost > 0
     ? Math.round((g.total_won / (g.total_won + g.total_lost)) * 100)
@@ -368,6 +377,30 @@ export default function DashboardClient({
             </table>
           </div>
         </Card>
+        {/* Analyse et recommandations */}
+        {insights.length > 0 && (
+          <Card title="Analyse et recommandations">
+            <div className="space-y-4">
+              {insights.map((ins, i) => {
+                const styles = {
+                  success: { border: "border-emerald-200 bg-emerald-50", title: "text-emerald-800", icon: "✅" },
+                  warning: { border: "border-amber-200 bg-amber-50", title: "text-amber-800", icon: "⚠️" },
+                  danger:  { border: "border-rose-200 bg-rose-50",   title: "text-rose-800",   icon: "🔴" },
+                  info:    { border: "border-sky-200 bg-sky-50",     title: "text-sky-800",     icon: "ℹ️" },
+                }[ins.type];
+                return (
+                  <div key={i} className={`rounded-xl border p-4 ${styles.border}`}>
+                    <p className={`font-semibold text-sm ${styles.title}`}>
+                      {styles.icon} {ins.title}
+                    </p>
+                    <p className="mt-1 text-sm text-gray-700">{ins.text}</p>
+                    <p className="mt-2 text-sm text-gray-500 italic">→ {ins.recommendation}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </Card>
+        )}
       </div>
     </div>
   );
