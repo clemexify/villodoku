@@ -50,7 +50,8 @@ export default function EndGameCard({
   }
 
   return (
-    <div className="w-full max-w-xl rounded-2xl border border-gray-100 bg-white p-5 shadow-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={(e) => e.target === e.currentTarget && void 0}>
+    <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-xl">
       {/* Titre */}
       <div className="mb-4 text-center">
         {won ? (
@@ -116,6 +117,7 @@ export default function EndGameCard({
           Voir les réponses possibles →
         </button>
       </div>
+    </div>
     </div>
   );
 }
