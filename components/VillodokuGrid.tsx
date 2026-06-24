@@ -2,8 +2,9 @@
 
 import { Fragment, useEffect, useState } from "react";
 import { track } from "@vercel/analytics";
-import { startSession, completeSession } from "@/lib/session-tracking";
+import { startSession, completeSession, trackShare } from "@/lib/session-tracking";
 import { todayParis } from "@/lib/date-format";
+import EndGameCard from "./EndGameCard";
 import CellModal from "./CellModal";
 import type { CommuneOption } from "@/lib/communes-search";
 import {
@@ -237,16 +238,17 @@ export default function VillodokuGrid({
       </div>
 
       <ScoreGauge score={score} />
-      {gameOver && <p className="text-red-600 font-semibold">Partie terminée ({MAX_ERRORS} erreurs)</p>}
-      {won && <p className="text-green-600 font-semibold">Bravo, grille complétée !</p>}
 
       {(won || gameOver) && (
-        <button
-          onClick={() => setShowSolutions(true)}
-          className="w-full max-w-xl rounded-xl border border-indigo-200 bg-indigo-50 py-2.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-100"
-        >
-          Voir les réponses possibles →
-        </button>
+        <EndGameCard
+          won={won}
+          score={score}
+          errors={errors}
+          cells={cells}
+          date={date}
+          onShowSolutions={() => setShowSolutions(true)}
+          onShare={() => trackShare(date)}
+        />
       )}
 
       {activeCell && (

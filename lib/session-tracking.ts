@@ -56,3 +56,14 @@ export async function completeSession(
     );
   if (error) console.error("[supabase] completeSession:", error.message, error.details);
 }
+
+/** Enregistre un partage WhatsApp sur la session. */
+export async function trackShare(gridDate: string): Promise<void> {
+  const userId = getUserId();
+  const { error } = await supabase
+    .from("game_sessions")
+    .update({ shared_whatsapp: true })
+    .eq("user_id", userId)
+    .eq("grid_date", gridDate);
+  if (error) console.error("[supabase] trackShare:", error.message);
+}
