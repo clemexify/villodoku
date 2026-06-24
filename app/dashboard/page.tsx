@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import DashboardClient, { type DayStats, type TrafficDay, type CellStat, type GlobalStats, type CrossingStat, type Insight } from "./DashboardClient";
+import DashboardClient, { type DayStats, type TrafficDay, type GlobalStats, type CrossingStat, type Insight } from "./DashboardClient";
 import { getDailyGrid } from "@/lib/daily-grid";
 
 export const dynamic = "force-dynamic";
@@ -142,28 +142,6 @@ export default async function Dashboard({
     shared_count: sharedCount,
   };
 
-  // ---- Taux de résolution par case (3x3) ----
-  const POSITION_LABELS = ["L1·C1","L1·C2","L1·C3","L2·C1","L2·C2","L2·C3","L3·C1","L3·C2","L3·C3"];
-  const cellCounts = Array(9).fill(null).map(() => ({ solved: 0, total: 0 }));
-
-  for (const s of sessions) {
-    if (!s.cells || !Array.isArray(s.cells)) continue;
-    (s.cells as { solved: boolean }[][]).forEach((row, r) => {
-      row.forEach((cell, c) => {
-        const idx = r * 3 + c;
-        cellCounts[idx].total++;
-        if (cell.solved) cellCounts[idx].solved++;
-      });
-    });
-  }
-
-  const cells: CellStat[] = cellCounts.map((c, i) => ({
-    position: POSITION_LABELS[i],
-    solve_rate: c.total > 0 ? (c.solved / c.total) * 100 : 0,
-    solved: c.solved,
-    total: c.total,
-  }));
-
   // ---- Croisements concrets ----
   const uniqueDates = [...new Set(sessions.map(s => s.grid_date as string))];
   const gridsByDate = new Map<string, { rows: { label: string }[]; cols: { label: string }[] }>();
@@ -277,5 +255,5 @@ export default async function Dashboard({
     insights.push({ type: "info", title: `${tooEasyCrossings.length} croisement${tooEasyCrossings.length > 1 ? "s" : ""} très facile${tooEasyCrossings.length > 1 ? "s" : ""} (> 85%)`, text: `"${tooEasyCrossings[0].label}" et similaires sont résolus par presque tous les joueurs.`, recommendation: "À conserver si le taux de victoire global est bas, à durcir si le jeu est trop facile." });
   }
 
-  return <DashboardClient days={days} trafficDays={trafficDays} cells={cells} global={global} crossings={crossings} insights={insights} />;
+  return <DashboardClient days={days} trafficDays={trafficDays} global={global} crossings={crossings} insights={insights} />;
 }

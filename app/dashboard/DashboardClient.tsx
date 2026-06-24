@@ -27,13 +27,6 @@ export type TrafficDay = {
   completed: number;
 };
 
-export type CellStat = {
-  position: string;
-  solve_rate: number;
-  solved: number;
-  total: number;
-};
-
 export type CrossingStat = {
   label: string;
   solve_rate: number;
@@ -133,14 +126,12 @@ function fmt(n: number | null) { return n == null ? "—" : Math.round(n).toStri
 export default function DashboardClient({
   days,
   trafficDays,
-  cells,
   global: g,
   crossings,
   insights,
 }: {
   days: DayStats[];
   trafficDays: TrafficDay[];
-  cells: CellStat[];
   global: GlobalStats;
   crossings: CrossingStat[];
   insights: Insight[];
@@ -191,50 +182,6 @@ export default function DashboardClient({
 
         {/* ══════════════════════════ ANALYSE DES GRILLES ══════════════════════════ */}
         <SectionTitle>Analyse des grilles</SectionTitle>
-
-        {/* Heatmap 3×3 */}
-        <Card title="Taux de résolution par case" subtitle="Cases de la grille 3×3 — vert ≥ 70%, orange 40–70%, rouge < 40%">
-          {cells.length > 0 ? (
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8">
-              <div className="grid grid-cols-3 gap-2 shrink-0">
-                {cells.map((cell) => {
-                  const rate = cell.solve_rate;
-                  const bg = rate >= 70 ? "bg-emerald-100 text-emerald-800"
-                    : rate >= 40 ? "bg-amber-100 text-amber-800"
-                    : "bg-rose-100 text-rose-800";
-                  return (
-                    <div key={cell.position} className={`rounded-xl p-3 text-center ${bg}`}>
-                      <div className="text-lg font-bold">{Math.round(rate)}%</div>
-                      <div className="text-xs opacity-70">{cell.solved}/{cell.total}</div>
-                      <div className="text-xs font-medium">{cell.position}</div>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex-1">
-                <ResponsiveContainer width="100%" height={200}>
-                  <BarChart
-                    data={cells.map(c => ({ name: c.position, taux: Math.round(c.solve_rate) }))}
-                    layout="vertical"
-                    margin={{ top: 5, right: 30, left: 60, bottom: 5 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                    <XAxis type="number" domain={[0, 100]} unit="%" tick={{ fontSize: 11 }} />
-                    <YAxis type="category" dataKey="name" tick={{ fontSize: 10 }} width={55} />
-                    <Tooltip formatter={(v) => `${v}%`} />
-                    <Bar dataKey="taux" name="Résolution" fill={C.indigo} radius={[0, 4, 4, 0]}>
-                      {cells.map((c, i) => (
-                        <Cell key={i} fill={c.solve_rate >= 70 ? C.emerald : c.solve_rate >= 40 ? C.amber : C.rose} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </div>
-          ) : (
-            <p className="text-sm text-gray-400">Pas encore de données de cases.</p>
-          )}
-        </Card>
 
         {/* Croisements */}
         <Card title="Croisements critère × critère" subtitle="Taux de réussite par combinaison de critères (min. 2 joueurs)">
