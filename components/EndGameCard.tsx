@@ -60,7 +60,7 @@ export default function EndGameCard({
           </>
         ) : (
           <>
-            <p className="text-2xl font-bold text-rose-500">Partie terminée</p>
+            <p className="text-2xl font-bold text-indigo-600">Partie terminée</p>
             <p className="text-sm text-gray-500">{solvedCount}/9 cases résolues</p>
           </>
         )}
