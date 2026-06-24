@@ -54,6 +54,7 @@ export default function VillodokuGrid({
   const [cells, setCells] = useState<CellState[][]>(emptyCells);
   const [errors, setErrors] = useState(0);
   const [showSolutions, setShowSolutions] = useState(false);
+  const [showEndGame, setShowEndGame] = useState(true);
   const [loaded, setLoaded] = useState(false);
   const [activeCell, setActiveCell] = useState<{ row: number; col: number } | null>(null);
 
@@ -72,6 +73,7 @@ export default function VillodokuGrid({
       // ignore les états sauvegardés corrompus
     }
     setLoaded(true);
+    setShowEndGame(true);
     startSession(date); // fire & forget
   }, [storageKey, date]);
 
@@ -239,7 +241,7 @@ export default function VillodokuGrid({
 
       <ScoreGauge score={score} />
 
-      {(won || gameOver) && (
+      {(won || gameOver) && showEndGame && (
         <EndGameCard
           won={won}
           score={score}
@@ -248,6 +250,7 @@ export default function VillodokuGrid({
           date={date}
           onShowSolutions={() => setShowSolutions(true)}
           onShare={() => trackShare(date)}
+          onClose={() => setShowEndGame(false)}
         />
       )}
 

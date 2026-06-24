@@ -31,6 +31,7 @@ export default function EndGameCard({
   date,
   onShowSolutions,
   onShare,
+  onClose,
 }: {
   won: boolean;
   score: number;
@@ -39,6 +40,7 @@ export default function EndGameCard({
   date: string;
   onShowSolutions: () => void;
   onShare: () => void;
+  onClose: () => void;
 }) {
   const rank = getScoreRank(score);
   const solvedCount = cells.flat().filter((c) => c.status === "correct").length;
@@ -50,8 +52,15 @@ export default function EndGameCard({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={(e) => e.target === e.currentTarget && void 0}>
-    <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+    <div className="relative w-full max-w-md rounded-2xl border border-gray-100 bg-white p-5 shadow-xl">
+      <button
+        onClick={onClose}
+        className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition"
+        aria-label="Fermer"
+      >
+        ✕
+      </button>
       {/* Titre */}
       <div className="mb-4 text-center">
         {won ? (
