@@ -23,11 +23,13 @@ export const metadata: Metadata = {
     siteName: "Villodoku",
     locale: "fr_FR",
     type: "website",
+    images: [{ url: "https://villodoku.fr/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Villodoku — le sudoku des villes de France",
     description: "Testez votre connaissance des villes de France. Une nouvelle grille chaque jour.",
+    images: ["https://villodoku.fr/og-image.png"],
   },
 };
 
