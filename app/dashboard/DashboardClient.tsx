@@ -27,6 +27,13 @@ export type CellStat = {
   total: number;
 };
 
+export type CrossingStat = {
+  label: string;
+  solve_rate: number;
+  solved: number;
+  total: number;
+};
+
 export type GlobalStats = {
   total_sessions: number;
   total_unique_users: number;
@@ -73,10 +80,12 @@ export default function DashboardClient({
   days,
   cells,
   global: g,
+  crossings,
 }: {
   days: DayStats[];
   cells: CellStat[];
   global: GlobalStats;
+  crossings: CrossingStat[];
 }) {
   const winRate = g.total_won + g.total_lost > 0
     ? Math.round((g.total_won / (g.total_won + g.total_lost)) * 100)
@@ -288,6 +297,43 @@ export default function DashboardClient({
             </div>
           ) : (
             <p className="text-sm text-gray-400">Pas encore de données de cases.</p>
+          )}
+        </Card>
+
+        {/* Croisements concrets */}
+        <Card title="Croisements : taux de réussite par combinaison critère × critère (décroissant)">
+          {crossings.length > 0 ? (
+            <ResponsiveContainer width="100%" height={Math.max(300, crossings.length * 28)}>
+              <BarChart
+                data={crossings}
+                layout="vertical"
+                margin={{ top: 5, right: 50, left: 8, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis type="number" domain={[0, 100]} unit="%" tick={{ fontSize: 11 }} />
+                <YAxis
+                  type="category"
+                  dataKey="label"
+                  tick={{ fontSize: 10 }}
+                  width={220}
+                />
+                <Tooltip
+                  formatter={(v, _, props) =>
+                    [`${v}% (${props.payload.solved}/${props.payload.total})`, "Réussite"]
+                  }
+                />
+                <Bar dataKey="solve_rate" name="Réussite" radius={[0, 4, 4, 0]}>
+                  {crossings.map((c, i) => (
+                    <Cell
+                      key={i}
+                      fill={c.solve_rate >= 70 ? COLORS.emerald : c.solve_rate >= 40 ? COLORS.amber : COLORS.rose}
+                    />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          ) : (
+            <p className="text-sm text-gray-400">Pas encore assez de données.</p>
           )}
         </Card>
 

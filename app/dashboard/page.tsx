@@ -1,8 +1,15 @@
 import { createClient } from "@supabase/supabase-js";
-import DashboardClient, { type DayStats, type CellStat, type GlobalStats } from "./DashboardClient";
-import { formatLongDate } from "@/lib/date-format";
+import DashboardClient, { type DayStats, type CellStat, type GlobalStats, type CrossingStat } from "./DashboardClient";
+import { getDailyGrid } from "@/lib/daily-grid";
 
 export const dynamic = "force-dynamic";
+
+function shortDate(date: string): string {
+  const d = new Date(`${date}T00:00:00Z`);
+  const day = d.toLocaleDateString("fr-FR", { weekday: "short", timeZone: "UTC" }).replace(".", "");
+  const num = d.getUTCDate();
+  return `${day} ${num}`;
+}
 
 export default async function Dashboard({
   searchParams,
@@ -25,7 +32,6 @@ export default async function Dashboard({
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
-  // Toutes les sessions
   const { data: sessions } = await supabase
     .from("game_sessions")
     .select("user_id, grid_date, outcome, score, errors, cells")
@@ -41,7 +47,7 @@ export default async function Dashboard({
 
   // ---- Agrégation par jour ----
   const byDay = new Map<string, {
-    sessions: Set<string>; users: Set<string>;
+    users: Set<string>;
     won: number; lost: number; abandoned: number;
     scores: number[]; errors: number[];
   }>();
@@ -49,14 +55,21 @@ export default async function Dashboard({
   for (const s of sessions) {
     const date = s.grid_date as string;
     if (!byDay.has(date)) {
-      byDay.set(date, { sessions: new Set(), users: new Set(), won: 0, lost: 0, abandoned: 0, scores: [], errors: [] });
+      byDay.set(date, { users: new Set(), won: 0, lost: 0, abandoned: 0, scores: [], errors: [] });
     }
     const day = byDay.get(date)!;
-    day.sessions.add(s.user_id + date); // uniq par user+date
     day.users.add(s.user_id);
-    if (s.outcome === "won") { day.won++; if (s.score != null) day.scores.push(s.score); if (s.errors != null) day.errors.push(s.errors); }
-    else if (s.outcome === "lost") { day.lost++; if (s.score != null) day.scores.push(s.score); if (s.errors != null) day.errors.push(s.errors); }
-    else day.abandoned++;
+    if (s.outcome === "won") {
+      day.won++;
+      if (s.score != null) day.scores.push(s.score);
+      if (s.errors != null) day.errors.push(s.errors);
+    } else if (s.outcome === "lost") {
+      day.lost++;
+      if (s.score != null) day.scores.push(s.score);
+      if (s.errors != null) day.errors.push(s.errors);
+    } else {
+      day.abandoned++;
+    }
   }
 
   const days: DayStats[] = Array.from(byDay.entries()).map(([date, d]) => {
@@ -66,7 +79,7 @@ export default async function Dashboard({
     const avgErrors = d.errors.length > 0 ? d.errors.reduce((a, b) => a + b, 0) / d.errors.length : null;
     return {
       date,
-      label: formatLongDate(date).replace(/^\w/, c => c.toUpperCase()).slice(0, 10),
+      label: shortDate(date),
       sessions: total,
       unique_users: d.users.size,
       completed,
@@ -87,27 +100,19 @@ export default async function Dashboard({
     userDays.get(s.user_id)!.add(s.grid_date);
   }
   const multiDay = Array.from(userDays.values()).filter(d => d.size > 1).length;
-  const monoDay = userDays.size - multiDay;
-  const totalWon = sessions.filter(s => s.outcome === "won").length;
-  const totalLost = sessions.filter(s => s.outcome === "lost").length;
-  const totalAbandoned = sessions.filter(s => !s.outcome).length;
 
   const global: GlobalStats = {
     total_sessions: sessions.length,
     total_unique_users: userDays.size,
     multi_day_users: multiDay,
-    mono_day_users: monoDay,
-    total_won: totalWon,
-    total_lost: totalLost,
-    total_abandoned: totalAbandoned,
+    mono_day_users: userDays.size - multiDay,
+    total_won: sessions.filter(s => s.outcome === "won").length,
+    total_lost: sessions.filter(s => s.outcome === "lost").length,
+    total_abandoned: sessions.filter(s => !s.outcome).length,
   };
 
   // ---- Taux de résolution par case (3x3) ----
-  const POSITION_LABELS = [
-    "L1·C1", "L1·C2", "L1·C3",
-    "L2·C1", "L2·C2", "L2·C3",
-    "L3·C1", "L3·C2", "L3·C3",
-  ];
+  const POSITION_LABELS = ["L1·C1","L1·C2","L1·C3","L2·C1","L2·C2","L2·C3","L3·C1","L3·C2","L3·C3"];
   const cellCounts = Array(9).fill(null).map(() => ({ solved: 0, total: 0 }));
 
   for (const s of sessions) {
@@ -128,5 +133,39 @@ export default async function Dashboard({
     total: c.total,
   }));
 
-  return <DashboardClient days={days} cells={cells} global={global} />;
+  // ---- Croisements concrets (critère ligne × critère colonne) ----
+  const uniqueDates = [...new Set(sessions.map(s => s.grid_date as string))];
+  const gridsByDate = new Map<string, { rows: { label: string }[]; cols: { label: string }[] }>();
+  for (const date of uniqueDates) {
+    const grid = getDailyGrid(date);
+    if (grid) gridsByDate.set(date, { rows: grid.rows, cols: grid.cols });
+  }
+
+  const crossingMap = new Map<string, { solved: number; total: number }>();
+  for (const s of sessions) {
+    if (!s.cells || !Array.isArray(s.cells)) continue;
+    const grid = gridsByDate.get(s.grid_date as string);
+    if (!grid) continue;
+    (s.cells as { solved: boolean }[][]).forEach((row, r) => {
+      row.forEach((cell, c) => {
+        const key = `${grid.rows[r].label} × ${grid.cols[c].label}`;
+        if (!crossingMap.has(key)) crossingMap.set(key, { solved: 0, total: 0 });
+        const stat = crossingMap.get(key)!;
+        stat.total++;
+        if (cell.solved) stat.solved++;
+      });
+    });
+  }
+
+  const crossings: CrossingStat[] = Array.from(crossingMap.entries())
+    .map(([label, { solved, total }]) => ({
+      label,
+      solve_rate: total > 0 ? Math.round((solved / total) * 100) : 0,
+      solved,
+      total,
+    }))
+    .filter(c => c.total >= 2)
+    .sort((a, b) => b.solve_rate - a.solve_rate);
+
+  return <DashboardClient days={days} cells={cells} global={global} crossings={crossings} />;
 }
