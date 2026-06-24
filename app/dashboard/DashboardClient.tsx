@@ -125,13 +125,13 @@ function CrossingQuartile({
   return (
     <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm flex flex-col">
       <h3 className="mb-3 text-xs font-bold uppercase tracking-wide" style={{ color }}>{title}</h3>
-      <div className="flex-1 overflow-y-auto max-h-52 space-y-1 pr-1">
+      <div className="flex-1 overflow-auto max-h-52 space-y-1">
         {items.length === 0 ? (
           <p className="text-xs text-gray-400">Aucune donnée</p>
         ) : items.map((c) => (
-          <div key={c.label} className="flex items-center justify-between gap-2 rounded-lg px-2 py-1" style={{ background: bg }}>
-            <span className="text-xs text-gray-700 truncate">{c.label}</span>
-            <span className="text-xs font-bold shrink-0" style={{ color }}>{c.solve_rate}%</span>
+          <div key={c.label} className="flex items-center justify-between gap-4 rounded-lg px-2 py-1 whitespace-nowrap min-w-max" style={{ background: bg }}>
+            <span className="text-xs text-gray-700">{c.label}</span>
+            <span className="text-xs font-bold" style={{ color }}>{c.solve_rate}%</span>
           </div>
         ))}
       </div>
