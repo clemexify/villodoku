@@ -12,6 +12,23 @@ const baloo = Baloo_2({
 export const metadata: Metadata = {
   title: "Villodoku — le sudoku des villes de France",
   description: "Le puzzle quotidien des villes de France : une nouvelle grille chaque jour.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Villodoku — le sudoku des villes de France",
+    description: "Testez votre connaissance des villes de France. Une nouvelle grille chaque jour.",
+    url: "https://villodoku.fr",
+    siteName: "Villodoku",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Villodoku — le sudoku des villes de France",
+    description: "Testez votre connaissance des villes de France. Une nouvelle grille chaque jour.",
+  },
 };
 
 export default function RootLayout({

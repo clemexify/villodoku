@@ -4,30 +4,19 @@ import { formatLongDate } from "@/lib/date-format";
 import { getScoreRank } from "@/lib/rarity";
 import type { CellState } from "@/lib/game-storage";
 
-function buildEmojiGrid(cells: CellState[][]): string {
-  return cells
-    .map((row) => row.map((cell) => (cell.status === "correct" ? "🟩" : "⬛")).join(""))
-    .join("\n");
-}
 
 function buildWhatsAppText(won: boolean, score: number, errors: number, cells: CellState[][], date: string): string {
   const dateLabel = formatLongDate(date);
   const rank = getScoreRank(score);
-  const emojiGrid = buildEmojiGrid(cells);
   const solvedCount = cells.flat().filter((c) => c.status === "correct").length;
-  const header = won ? "🏆 Grille complétée !" : `💪 ${solvedCount}/9 cases résolues`;
-  const errLine = errors === 0 ? "Sans erreur 🎯" : `${errors} erreur${errors > 1 ? "s" : ""}`;
+  const result = won ? "Grille complétée !" : `${solvedCount}/9 cases résolues`;
+  const errLine = errors === 0 ? "Sans erreur" : `${errors} erreur${errors > 1 ? "s" : ""}`;
 
   return [
-    `🏙️ Villodoku — ${dateLabel}`,
-    header,
+    `Villodoku — ${dateLabel}`,
+    `${result} | Score : ${score}/100 (${rank}) | ${errLine}`,
     "",
-    `Score : ${score}/100 (${rank})`,
-    errLine,
-    "",
-    emojiGrid,
-    "",
-    "Joue la grille du jour 👉 villodoku.fr",
+    "villodoku.fr",
   ].join("\n");
 }
 
