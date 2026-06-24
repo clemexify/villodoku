@@ -129,9 +129,9 @@ function CrossingQuartile({
         {items.length === 0 ? (
           <p className="text-xs text-gray-400">Aucune donnée</p>
         ) : items.map((c) => (
-          <div key={c.label} className="flex items-center justify-between gap-4 rounded-lg px-2 py-1 whitespace-nowrap min-w-max" style={{ background: bg }}>
+          <div key={c.label} className="flex items-center gap-2 rounded-lg px-2 py-1 whitespace-nowrap min-w-max" style={{ background: bg }}>
+            <span className="text-xs font-bold w-9 shrink-0 text-right" style={{ color }}>{c.solve_rate}%</span>
             <span className="text-xs text-gray-700">{c.label}</span>
-            <span className="text-xs font-bold" style={{ color }}>{c.solve_rate}%</span>
           </div>
         ))}
       </div>
