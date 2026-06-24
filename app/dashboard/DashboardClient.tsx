@@ -63,13 +63,10 @@ const C = {
   teal: "#14b8a6",
 };
 
-function Card({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
+function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-      <div className="mb-4">
-        <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{title}</h3>
-        {subtitle && <p className="mt-0.5 text-xs text-gray-400">{subtitle}</p>}
-      </div>
+      <h3 className="mb-4 text-sm font-semibold text-gray-500 uppercase tracking-wide">{title}</h3>
       {children}
     </div>
   );
@@ -104,7 +101,7 @@ function Funnel({ steps }: { steps: { label: string; value: number; color: strin
           <div className="w-40 shrink-0 text-right text-sm text-gray-600">{s.label}</div>
           <div className="relative flex-1 h-9 bg-gray-100 rounded-lg overflow-hidden">
             <div
-              className="h-full rounded-lg flex items-center pl-3 text-white text-sm font-bold transition-all"
+              className="h-full rounded-lg flex items-center pl-3 text-white text-sm font-bold"
               style={{
                 width: `${max > 0 ? Math.max((s.value / max) * 100, s.value > 0 ? 8 : 0) : 0}%`,
                 background: s.color,
@@ -113,9 +110,32 @@ function Funnel({ steps }: { steps: { label: string; value: number; color: strin
               {s.value}
             </div>
           </div>
-          {s.pct && <div className="w-12 shrink-0 text-xs text-gray-400">{s.pct}</div>}
+          {s.pct && <div className="w-24 shrink-0 text-xs text-gray-400">{s.pct}</div>}
         </div>
       ))}
+    </div>
+  );
+}
+
+function CrossingQuartile({
+  title, color, bg, items,
+}: {
+  title: string; color: string; bg: string; items: CrossingStat[];
+}) {
+  return (
+    <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm flex flex-col">
+      <h3 className="mb-3 text-xs font-bold uppercase tracking-wide" style={{ color }}>{title}</h3>
+      <div className="flex-1 overflow-y-auto max-h-52 space-y-1 pr-1">
+        {items.length === 0 ? (
+          <p className="text-xs text-gray-400">Aucune donnée</p>
+        ) : items.map((c) => (
+          <div key={c.label} className="flex items-center justify-between gap-2 rounded-lg px-2 py-1" style={{ background: bg }}>
+            <span className="text-xs text-gray-700 truncate">{c.label}</span>
+            <span className="text-xs font-bold shrink-0" style={{ color }}>{c.solve_rate}%</span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2 text-xs text-gray-400">{items.length} croisement{items.length > 1 ? "s" : ""}</p>
     </div>
   );
 }
@@ -140,6 +160,7 @@ export default function DashboardClient({
     ? Math.round((g.total_won / (g.total_won + g.total_lost)) * 100) : 0;
   const completionRate = g.total_sessions > 0
     ? Math.round(((g.total_won + g.total_lost) / g.total_sessions) * 100) : 0;
+
   const retentionPie = [
     { name: "Multi-jours", value: g.multi_day_users, color: C.indigo },
     { name: "1 seul jour", value: g.mono_day_users, color: C.gray },
@@ -151,6 +172,14 @@ export default function DashboardClient({
     { label: "Parties gagnées", value: g.total_won, color: C.emerald, pct: g.total_won + g.total_lost > 0 ? pct(winRate) + " des terminées" : undefined },
     { label: "Partagées WhatsApp", value: g.shared_count, color: "#25D366", pct: g.total_sessions > 0 ? pct(Math.round((g.shared_count / g.total_sessions) * 100)) : undefined },
   ];
+
+  // Quartiles des croisements (triés du plus facile au plus difficile)
+  const sorted = [...crossings].sort((a, b) => b.solve_rate - a.solve_rate);
+  const n = sorted.length;
+  const q1 = sorted.slice(0, Math.ceil(n * 0.25));
+  const q2 = sorted.slice(Math.ceil(n * 0.25), Math.ceil(n * 0.5));
+  const q3 = sorted.slice(Math.ceil(n * 0.5), Math.ceil(n * 0.75));
+  const q4 = sorted.slice(Math.ceil(n * 0.75));
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -180,33 +209,65 @@ export default function DashboardClient({
           </Card>
         </div>
 
+        {/* ══════════════════════════ TRAFIC ══════════════════════════ */}
+        <SectionTitle>Trafic</SectionTitle>
+
+        <Card title="Visiteurs par jour calendaire">
+          <ResponsiveContainer width="100%" height={240}>
+            <BarChart data={trafficDays} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+              <YAxis tick={{ fontSize: 11 }} />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="visitors" name="Visiteurs uniques" fill={C.indigo} radius={[4, 4, 0, 0]} />
+              <Bar dataKey="started" name="Parties lancées" fill={C.violet} radius={[4, 4, 0, 0]} />
+              <Bar dataKey="completed" name="Parties terminées" fill={C.teal} radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </Card>
+
+        <Card title={`Fidélisation — ${g.total_unique_users > 0 ? Math.round((g.multi_day_users / g.total_unique_users) * 100) : 0}% reviennent`}>
+          <div className="flex items-center gap-6">
+            <ResponsiveContainer width={160} height={160}>
+              <PieChart>
+                <Pie data={retentionPie} dataKey="value" cx="50%" cy="50%" innerRadius={40} outerRadius={70}>
+                  {retentionPie.map((d, i) => <Cell key={i} fill={d.color} />)}
+                </Pie>
+                <Tooltip />
+              </PieChart>
+            </ResponsiveContainer>
+            <div className="flex flex-col gap-3">
+              {retentionPie.map(d => (
+                <div key={d.name} className="flex items-center gap-2 text-sm">
+                  <span className="h-3 w-3 rounded-full" style={{ background: d.color }} />
+                  <span className="text-gray-600">{d.name}</span>
+                  <span className="font-bold text-gray-900">{d.value}</span>
+                </div>
+              ))}
+              <div className="mt-1 rounded-lg bg-indigo-50 px-3 py-2 text-xs text-indigo-700">
+                <strong>{g.multi_day_users}</strong> joueur{g.multi_day_users > 1 ? "s" : ""} sur {g.total_unique_users} ont joué plusieurs jours
+              </div>
+            </div>
+          </div>
+        </Card>
+
         {/* ══════════════════════════ ANALYSE DES GRILLES ══════════════════════════ */}
         <SectionTitle>Analyse des grilles</SectionTitle>
 
-        {/* Croisements */}
-        <Card title="Croisements critère × critère" subtitle="Taux de réussite par combinaison de critères (min. 2 joueurs)">
-          {crossings.length > 0 ? (
-            <ResponsiveContainer width="100%" height={Math.max(300, crossings.length * 28)}>
-              <BarChart
-                data={crossings}
-                layout="vertical"
-                margin={{ top: 5, right: 50, left: 8, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis type="number" domain={[0, 100]} unit="%" tick={{ fontSize: 11 }} />
-                <YAxis type="category" dataKey="label" tick={{ fontSize: 10 }} width={220} />
-                <Tooltip formatter={(v, _, props) => [`${v}% (${props.payload.solved}/${props.payload.total})`, "Réussite"]} />
-                <Bar dataKey="solve_rate" name="Réussite" radius={[0, 4, 4, 0]}>
-                  {crossings.map((c, i) => (
-                    <Cell key={i} fill={c.solve_rate >= 70 ? C.emerald : c.solve_rate >= 40 ? C.amber : C.rose} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          ) : (
+        {/* Croisements en 4 quartiles */}
+        {crossings.length > 0 ? (
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <CrossingQuartile title="Très faciles" color="#059669" bg="#f0fdf4" items={q1} />
+            <CrossingQuartile title="Faciles" color="#0284c7" bg="#f0f9ff" items={q2} />
+            <CrossingQuartile title="Difficiles" color="#d97706" bg="#fffbeb" items={q3} />
+            <CrossingQuartile title="Très difficiles" color="#e11d48" bg="#fff1f2" items={q4} />
+          </div>
+        ) : (
+          <Card title="Croisements critère × critère">
             <p className="text-sm text-gray-400">Pas encore assez de données.</p>
-          )}
-        </Card>
+          </Card>
+        )}
 
         {/* Score + erreurs par grille */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -235,7 +296,7 @@ export default function DashboardClient({
         </div>
 
         {/* Issues par grille */}
-        <Card title="Issues par grille" subtitle="Victoires / Échecs / Abandons empilés par date de grille">
+        <Card title="Issues par grille">
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={days} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -250,55 +311,10 @@ export default function DashboardClient({
           </ResponsiveContainer>
         </Card>
 
-        {/* ══════════════════════════ TRAFIC ══════════════════════════ */}
-        <SectionTitle>Trafic</SectionTitle>
-
-        {/* Visiteurs par jour calendaire */}
-        <Card title="Visiteurs par jour calendaire" subtitle="Basé sur la date de connexion réelle (timestamp) — un visiteur peut jouer plusieurs grilles">
-          <ResponsiveContainer width="100%" height={240}>
-            <BarChart data={trafficDays} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="label" tick={{ fontSize: 11 }} />
-              <YAxis tick={{ fontSize: 11 }} />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="visitors" name="Visiteurs uniques" fill={C.indigo} radius={[4, 4, 0, 0]} />
-              <Bar dataKey="started" name="Parties lancées" fill={C.violet} radius={[4, 4, 0, 0]} />
-              <Bar dataKey="completed" name="Parties terminées" fill={C.teal} radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </Card>
-
-        {/* Fidélisation */}
-        <Card title={`Fidélisation — ${g.total_unique_users > 0 ? Math.round((g.multi_day_users / g.total_unique_users) * 100) : 0}% reviennent`} subtitle="Proportion de joueurs ayant joué sur plusieurs jours différents">
-          <div className="flex items-center gap-6">
-            <ResponsiveContainer width={160} height={160}>
-              <PieChart>
-                <Pie data={retentionPie} dataKey="value" cx="50%" cy="50%" innerRadius={40} outerRadius={70}>
-                  {retentionPie.map((d, i) => <Cell key={i} fill={d.color} />)}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-            <div className="flex flex-col gap-3">
-              {retentionPie.map(d => (
-                <div key={d.name} className="flex items-center gap-2 text-sm">
-                  <span className="h-3 w-3 rounded-full" style={{ background: d.color }} />
-                  <span className="text-gray-600">{d.name}</span>
-                  <span className="font-bold text-gray-900">{d.value}</span>
-                </div>
-              ))}
-              <div className="mt-1 rounded-lg bg-indigo-50 px-3 py-2 text-xs text-indigo-700">
-                <strong>{g.multi_day_users}</strong> joueur{g.multi_day_users > 1 ? "s" : ""} sur {g.total_unique_users} ont joué plusieurs jours
-              </div>
-            </div>
-          </div>
-        </Card>
-
         {/* ══════════════════════════ CONVERSION ══════════════════════════ */}
         <SectionTitle>Conversion</SectionTitle>
 
-        <Card title="Entonnoir de conversion" subtitle="De la partie lancée jusqu'au partage WhatsApp">
+        <Card title="Entonnoir de conversion">
           <Funnel steps={funnelSteps} />
           <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 text-center">
             {[
