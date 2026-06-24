@@ -11,10 +11,13 @@ function buildWhatsAppText(won: boolean, score: number, errors: number, cells: C
   const solvedCount = cells.flat().filter((c) => c.status === "correct").length;
   const result = won ? "Grille complétée !" : `${solvedCount}/9 cases résolues`;
   const errLine = errors === 0 ? "Sans erreur" : `${errors} erreur${errors > 1 ? "s" : ""}`;
+  const grid = cells.map((row) => row.map((c) => (c.status === "correct" ? "🟩" : "⬛")).join("")).join("\n");
 
   return [
     `Villodoku — ${dateLabel}`,
     `${result} | Score : ${score}/100 (${rank}) | ${errLine}`,
+    "",
+    grid,
     "",
     "villodoku.fr",
   ].join("\n");
