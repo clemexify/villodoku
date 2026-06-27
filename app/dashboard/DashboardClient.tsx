@@ -3,6 +3,7 @@
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, PieChart, Pie, Cell, Legend,
+  AreaChart, Area,
 } from "recharts";
 
 export type DayStats = {
@@ -208,6 +209,34 @@ export default function DashboardClient({
             <KPI label="Taux de victoire" value={pct(winRate)} sub={`${g.total_won} gagnées / ${g.total_lost} perdues`} />
           </Card>
         </div>
+
+        {/* Graphe joueurs uniques quotidiens */}
+        <Card title="Joueurs uniques par jour">
+          <ResponsiveContainer width="100%" height={180}>
+            <AreaChart data={trafficDays} margin={{ top: 5, right: 10, left: -10, bottom: 5 }}>
+              <defs>
+                <linearGradient id="visitorsGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor={C.indigo} stopOpacity={0.25} />
+                  <stop offset="95%" stopColor={C.indigo} stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+              <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+              <YAxis tick={{ fontSize: 11 }} allowDecimals={false} />
+              <Tooltip formatter={(v) => [v, "Joueurs uniques"]} />
+              <Area
+                type="monotone"
+                dataKey="visitors"
+                name="Joueurs uniques"
+                stroke={C.indigo}
+                fill="url(#visitorsGrad)"
+                strokeWidth={2}
+                dot={{ r: 3, fill: C.indigo, strokeWidth: 0 }}
+                activeDot={{ r: 5 }}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </Card>
 
         {/* ══════════════════════════ TRAFIC ══════════════════════════ */}
         <SectionTitle>Trafic</SectionTitle>

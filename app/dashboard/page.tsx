@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import DashboardClient, { type DayStats, type TrafficDay, type GlobalStats, type CrossingStat, type Insight } from "./DashboardClient";
-import { getDailyGrid } from "@/lib/daily-grid";
+import { generateFromSeed } from "@/lib/daily-grid";
 
 export const dynamic = "force-dynamic";
 
@@ -39,10 +39,15 @@ export default async function Dashboard({
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
-  const { data: sessions } = await supabase
-    .from("game_sessions")
-    .select("user_id, grid_date, outcome, score, errors, cells, created_at, shared_whatsapp")
-    .order("grid_date", { ascending: true });
+  const [{ data: sessions }, { data: scheduledGridsData }] = await Promise.all([
+    supabase
+      .from("game_sessions")
+      .select("user_id, grid_date, outcome, score, errors, cells, created_at, shared_whatsapp")
+      .order("grid_date", { ascending: true }),
+    supabase
+      .from("scheduled_grids")
+      .select("date, rows, cols"),
+  ]);
 
   if (!sessions) {
     return (
@@ -50,6 +55,15 @@ export default async function Dashboard({
         <p className="text-gray-400">Erreur de connexion Supabase.</p>
       </main>
     );
+  }
+
+  // Index des grilles planifiées par date (labels disponibles sans re-query)
+  const scheduledByDate = new Map<string, { rows: { label: string }[]; cols: { label: string }[] }>();
+  for (const g of (scheduledGridsData ?? [])) {
+    scheduledByDate.set(g.date as string, {
+      rows: g.rows as { label: string }[],
+      cols: g.cols as { label: string }[],
+    });
   }
 
   // ---- Agrégation par jour de grille (grid_date) ----
@@ -143,12 +157,17 @@ export default async function Dashboard({
   };
 
   // ---- Croisements concrets ----
+  // Récupère les labels sans requête réseau : scheduledGrids d'abord, puis seed CPU
   const uniqueDates = [...new Set(sessions.map(s => s.grid_date as string))];
   const gridsByDate = new Map<string, { rows: { label: string }[]; cols: { label: string }[] }>();
-  await Promise.all(uniqueDates.map(async (date) => {
-    const grid = await getDailyGrid(date);
-    if (grid) gridsByDate.set(date, { rows: grid.rows, cols: grid.cols });
-  }));
+  for (const date of uniqueDates) {
+    if (scheduledByDate.has(date)) {
+      gridsByDate.set(date, scheduledByDate.get(date)!);
+    } else {
+      const grid = generateFromSeed(date);
+      if (grid) gridsByDate.set(date, { rows: grid.rows, cols: grid.cols });
+    }
+  }
 
   const crossingMap = new Map<string, { solved: number; total: number }>();
   for (const s of sessions) {
