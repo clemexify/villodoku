@@ -24,6 +24,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ d
 
   return (
     <VillodokuApp
+      key={selectedDate}
       today={today}
       initialSelectedDate={selectedDate}
       initialRows={grid.rows.map((r) => ({ id: r.id, label: r.label }))}
