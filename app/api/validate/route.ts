@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "codeCommune requis" }, { status: 400 });
   }
 
-  const grid = getDailyGrid(date);
+  const grid = await getDailyGrid(date);
   if (!grid) {
     return NextResponse.json({ error: "Grille introuvable pour cette date" }, { status: 404 });
   }

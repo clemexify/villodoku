@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Format de date invalide (attendu YYYY-MM-DD)" }, { status: 400 });
   }
 
-  const grid = getDailyGrid(date);
+  const grid = await getDailyGrid(date);
   if (!grid) {
     return NextResponse.json({ error: "Impossible de générer la grille pour cette date" }, { status: 500 });
   }

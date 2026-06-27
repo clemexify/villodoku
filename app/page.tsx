@@ -12,7 +12,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ d
   const availableDates = new Set(datesSinceLaunch(today));
   const selectedDate = date && /^\d{4}-\d{2}-\d{2}$/.test(date) && availableDates.has(date) ? date : today;
 
-  const grid = getDailyGrid(selectedDate);
+  const grid = await getDailyGrid(selectedDate);
 
   if (!grid) {
     return (

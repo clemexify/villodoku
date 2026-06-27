@@ -30,6 +30,7 @@ export interface Commune {
   nom_avec_tiret: boolean;
   nom_commence_saint: boolean;
   nom_premiere_lettre: string;
+  nom_derniere_lettre: string;
 }
 
 export interface Criterion {
@@ -71,12 +72,18 @@ export interface GridGenOptions {
    * Permet de générer des grilles garantissant un critère particulier (ex: "departement").
    */
   requiredCategory?: string;
+  /**
+   * Ensemble de paires "rowId|colId" à exclure de la grille générée.
+   * Utilisé par l'interface de curation pour éviter les croisements récemment utilisés.
+   */
+  forbiddenCrossings?: Set<string>;
 }
 
 // Seuils minimaux pour qu'une valeur de critère soit retenue dans le pool
 // (en dessous, l'intersection avec d'autres critères serait trop souvent vide).
 const MIN_CANDIDATES = {
   letter: 40,
+  last_letter: 50,
   region: 30,
   departement: 20,
   river: 3,
@@ -88,6 +95,7 @@ const MIN_CANDIDATES = {
 // qu'il revienne dans toutes les grilles.
 const PRIORITY_CATEGORIES = [
   'letter',
+  'last_letter',
   'region',
   'departement',
   'prefecture',
@@ -238,16 +246,16 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       test: (c) => /^(Le |La |Les |L')/.test(c.nom_commune),
     },
     {
-      id: 'nom_sur',
-      label: 'Nom contenant « -sur- »',
+      id: 'nom_en',
+      label: 'Nom contenant « -sur- », « -sous- » ou « -en- »',
       category: 'nom',
-      test: (c) => c.nom_commune.includes('-sur-'),
+      test: (c) => c.nom_commune.includes('-sur-') || c.nom_commune.includes('-sous-') || c.nom_commune.includes('-en-'),
     },
     {
-      id: 'nom_en',
-      label: 'Nom contenant « -en- »',
+      id: 'ends_ville',
+      label: 'Nom se terminant par « ville »',
       category: 'nom',
-      test: (c) => c.nom_commune.includes('-en-'),
+      test: (c) => c.nom_commune.toLowerCase().endsWith('ville'),
     },
     {
       id: 'nom_long',
@@ -309,6 +317,25 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
     }
   }
   pool.set('letter', letters);
+
+  // Dernière lettre : uniquement les lettres suffisamment représentées
+  const lastLetterCounts = new Map<string, number>();
+  for (const c of communes) {
+    lastLetterCounts.set(c.nom_derniere_lettre, (lastLetterCounts.get(c.nom_derniere_lettre) ?? 0) + 1);
+  }
+  const lastLetters: Criterion[] = [];
+  for (const [letter, count] of lastLetterCounts) {
+    if (!letter) continue;
+    if (count >= MIN_CANDIDATES.last_letter) {
+      lastLetters.push({
+        id: `last_letter_${letter}`,
+        label: `Termine par la lettre ${letter}`,
+        category: 'last_letter',
+        test: (c) => c.nom_derniere_lettre === letter,
+      });
+    }
+  }
+  pool.set('last_letter', lastLetters);
 
   // Région administrative : uniquement les régions suffisamment représentées
   const regionCounts = new Map<string, number>();
@@ -381,7 +408,7 @@ function pick<T>(arr: T[], rng: () => number): T {
  * backtracking, en traitant d'abord les cases ayant le moins de solutions
  * (heuristique MRV) pour limiter l'explosion combinatoire.
  */
-function findFullAssignment(cells: GridCell[][]): Commune[][] | null {
+export function findFullAssignment(cells: GridCell[][]): Commune[][] | null {
   const positions: Array<[number, number]> = [];
   for (let r = 0; r < 3; r++) {
     for (let c = 0; c < 3; c++) positions.push([r, c]);
@@ -427,7 +454,7 @@ export function generateGrid(
   rng: () => number,
   options: GridGenOptions
 ): Grid | null {
-  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory } = options;
+  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory, forbiddenCrossings } = options;
 
   const categories = Array.from(criteriaPool.keys()).filter(
     (cat) => (criteriaPool.get(cat) ?? []).length > 0
@@ -488,6 +515,13 @@ export function generateGrid(
       const ids = new Set(criteria.map((c) => c.id));
       if (ids.has('saint') && (ids.has('letter_S') || ids.has('tiret'))) continue;
 
+      // Évite "Commence par X" + "Termine par X" pour la même lettre
+      const hasLetterConflict = criteria.some(
+        (a) => a.category === 'letter' &&
+          criteria.some((b) => b.category === 'last_letter' && b.id === `last_letter_${a.id.replace('letter_', '')}`)
+      );
+      if (hasLetterConflict) continue;
+
       const hasRegion = criteria.some((c) => c.category === 'region');
       const hasDept = criteria.some((c) => c.category === 'departement');
       if (hasRegion && hasDept) continue;
@@ -525,6 +559,19 @@ export function generateGrid(
         rowCells.push({ row: rows[r], col: cols[c], solutions });
       }
       cells.push(rowCells);
+    }
+
+    if (!valid) continue;
+
+    if (forbiddenCrossings) {
+      outer: for (let r = 0; r < 3; r++) {
+        for (let c = 0; c < 3; c++) {
+          if (forbiddenCrossings.has(`${rows[r].id}|${cols[c].id}`)) {
+            valid = false;
+            break outer;
+          }
+        }
+      }
     }
 
     if (!valid) continue;

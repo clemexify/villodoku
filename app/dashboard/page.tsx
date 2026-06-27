@@ -145,10 +145,10 @@ export default async function Dashboard({
   // ---- Croisements concrets ----
   const uniqueDates = [...new Set(sessions.map(s => s.grid_date as string))];
   const gridsByDate = new Map<string, { rows: { label: string }[]; cols: { label: string }[] }>();
-  for (const date of uniqueDates) {
-    const grid = getDailyGrid(date);
+  await Promise.all(uniqueDates.map(async (date) => {
+    const grid = await getDailyGrid(date);
     if (grid) gridsByDate.set(date, { rows: grid.rows, cols: grid.cols });
-  }
+  }));
 
   const crossingMap = new Map<string, { solved: number; total: number }>();
   for (const s of sessions) {
