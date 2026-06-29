@@ -283,6 +283,12 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       category: 'nom',
       test: (c) => c.nom_commune.replace(/[-'\s]/g, '').length <= 4,
     },
+    {
+      id: 'sans_e',
+      label: 'Nom sans la lettre « e »',
+      category: 'nom',
+      test: (c) => !c.nom_commune.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().includes('e'),
+    },
   ]);
 
   pool.set('saint', [
