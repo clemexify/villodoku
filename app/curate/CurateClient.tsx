@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
 import type { GridCandidate } from "@/lib/daily-grid";
 
 type ScheduledGrid = {
@@ -19,7 +19,7 @@ type DayState = {
   approved: boolean;
 };
 
-type CriterionMeta = { id: string; label: string; category: string };
+type CriterionMeta = { id: string; label: string; category: string; lastUsed?: string | null };
 type CriteriaCategory = { name: string; criteria: CriterionMeta[] };
 
 function daysBetween(a: string, b: string): number {
@@ -398,7 +398,6 @@ function BuilderPanel({
   const [previewLoading, setPreviewLoading] = useState(false);
   const [previewError, setPreviewError] = useState<string | null>(null);
 
-  const allCriteria = categories.flatMap((c) => c.criteria);
   const selectedIds = new Set([...rowIds, ...colIds]);
 
   function toggle(id: string, target: "row" | "col") {
@@ -457,7 +456,7 @@ function BuilderPanel({
           label="Lignes"
           color="indigo"
           ids={rowIds}
-          allCriteria={allCriteria}
+          categories={categories}
           selectedIds={selectedIds}
           onAdd={(id) => toggle(id, "row")}
           onRemove={remove}
@@ -467,7 +466,7 @@ function BuilderPanel({
           label="Colonnes"
           color="violet"
           ids={colIds}
-          allCriteria={allCriteria}
+          categories={categories}
           selectedIds={selectedIds}
           onAdd={(id) => toggle(id, "col")}
           onRemove={remove}
@@ -510,11 +509,17 @@ function BuilderPanel({
 
 // ── SlotPicker ────────────────────────────────────────────────────────────────
 
+function formatLastUsed(date: string | null | undefined): string {
+  if (!date) return "jamais";
+  const [y, m, d] = date.split("-");
+  return `${d}/${m}/${y.slice(2)}`;
+}
+
 function SlotPicker({
   label,
   color,
   ids,
-  allCriteria,
+  categories,
   selectedIds,
   onAdd,
   onRemove,
@@ -523,44 +528,34 @@ function SlotPicker({
   label: string;
   color: "indigo" | "violet";
   ids: string[];
-  allCriteria: CriterionMeta[];
+  categories: CriteriaCategory[];
   selectedIds: Set<string>;
   onAdd: (id: string) => void;
   onRemove: (id: string) => void;
   max: number;
 }) {
-  const [query, setQuery] = useState("");
-  const inputRef = useRef<HTMLInputElement>(null);
+  const allCriteria = categories.flatMap((c) => c.criteria);
 
   const colorMap = {
     indigo: {
       badge: "bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200",
-      btn: "bg-indigo-600 hover:bg-indigo-700 text-white",
       header: "text-indigo-700",
+      select: "focus:border-indigo-300",
     },
     violet: {
       badge: "bg-violet-50 text-violet-700 ring-1 ring-violet-200",
-      btn: "bg-violet-600 hover:bg-violet-700 text-white",
       header: "text-violet-700",
+      select: "focus:border-violet-300",
     },
   }[color];
 
-  const filtered = query.trim().length >= 1
-    ? allCriteria.filter(
-        (c) =>
-          !selectedIds.has(c.id) &&
-          c.label.toLowerCase().includes(query.toLowerCase())
-      ).slice(0, 30)
-    : [];
-
   return (
     <div className="flex flex-col gap-2">
-      {/* Titre + slots */}
       <div className={`text-xs font-bold uppercase tracking-wide ${colorMap.header}`}>
         {label} ({ids.length}/{max})
       </div>
 
-      {/* Critères sélectionnés */}
+      {/* Slots sélectionnés */}
       <div className="flex flex-col gap-1 min-h-[68px]">
         {ids.map((id) => {
           const c = allCriteria.find((x) => x.id === id);
@@ -578,42 +573,37 @@ function SlotPicker({
           );
         })}
         {ids.length < max && (
-          <div className="flex items-center rounded-lg border border-dashed border-gray-200 px-2 py-1">
+          <div className="rounded-lg border border-dashed border-gray-200 px-2 py-1">
             <span className="text-[10px] text-gray-300">slot vide</span>
           </div>
         )}
       </div>
 
-      {/* Recherche */}
+      {/* Menu déroulant */}
       {ids.length < max && (
-        <div className="relative">
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Rechercher un critère…"
-            className="w-full rounded-lg border border-gray-200 px-2.5 py-1.5 text-xs placeholder:text-gray-300 focus:border-indigo-300 focus:outline-none"
-          />
-          {filtered.length > 0 && (
-            <div className="absolute z-10 mt-1 w-full rounded-lg border border-gray-100 bg-white shadow-lg max-h-48 overflow-y-auto">
-              {filtered.map((c) => (
-                <button
-                  key={c.id}
-                  onClick={() => {
-                    onAdd(c.id);
-                    setQuery("");
-                    inputRef.current?.focus();
-                  }}
-                  className="w-full px-3 py-1.5 text-left text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between gap-2"
-                >
-                  <span>{c.label}</span>
-                  <span className="text-[10px] text-gray-300 shrink-0">{c.category}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+        <select
+          value=""
+          onChange={(e) => {
+            if (e.target.value) onAdd(e.target.value);
+            e.currentTarget.value = "";
+          }}
+          className={`w-full rounded-lg border border-gray-200 px-2 py-1.5 text-xs text-gray-700 focus:outline-none ${colorMap.select}`}
+        >
+          <option value="">Ajouter un critère…</option>
+          {categories.map((cat) => {
+            const available = cat.criteria.filter((c) => !selectedIds.has(c.id));
+            if (available.length === 0) return null;
+            return (
+              <optgroup key={cat.name} label={cat.name}>
+                {available.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.label} ({formatLastUsed(c.lastUsed)})
+                  </option>
+                ))}
+              </optgroup>
+            );
+          })}
+        </select>
       )}
     </div>
   );
