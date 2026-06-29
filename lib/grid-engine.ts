@@ -181,10 +181,12 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
     },
   ]);
 
-  // Département : uniquement ceux suffisamment représentés dans le corpus
+  // Département : par nom ET par numéro (même pool, une seule variante par grille)
   const deptCounts = new Map<string, number>();
+  const deptCodeToNom = new Map<string, string>();
   for (const c of communes) {
     deptCounts.set(c.departement_nom, (deptCounts.get(c.departement_nom) ?? 0) + 1);
+    deptCodeToNom.set(c.departement_code, c.departement_nom);
   }
   const depts: Criterion[] = [];
   for (const [dept, count] of deptCounts) {
@@ -194,6 +196,18 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
         label: `Département : ${dept}`,
         category: 'departement',
         test: (c) => c.departement_nom === dept,
+      });
+    }
+  }
+  // Versions numériques : "Département 59" (même seuil, même catégorie)
+  for (const [code, nom] of deptCodeToNom) {
+    const count = deptCounts.get(nom) ?? 0;
+    if (count >= MIN_CANDIDATES.departement) {
+      depts.push({
+        id: `dept_num_${code}`,
+        label: `Département ${code}`,
+        category: 'departement',
+        test: (c) => c.departement_code === code,
       });
     }
   }
