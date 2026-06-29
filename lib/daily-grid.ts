@@ -135,7 +135,7 @@ export type CellPreview = {
   rowId: string;
   colId: string;
   totalSolutions: number;
-  topCities: { name: string; dept: string; population: number }[];
+  solutions: { name: string; dept: string; population: number }[];
   lastUsedDate: string | null;
 };
 
@@ -218,9 +218,8 @@ export function generateCandidateGrid(
           rowId: grid.rows[r].id,
           colId: grid.cols[c].id,
           totalSolutions: cell.solutions.length,
-          topCities: [...cell.solutions]
+          solutions: [...cell.solutions]
             .sort((a, b) => b.population - a.population)
-            .slice(0, 5)
             .map((s) => ({ name: s.nom_commune, dept: s.departement_nom, population: s.population })),
           lastUsedDate: crossingLastUsed.get(key) ?? null,
         };

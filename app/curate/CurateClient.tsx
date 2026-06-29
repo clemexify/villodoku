@@ -333,15 +333,13 @@ function CandidateGrid({ candidate }: { candidate: GridCandidate }) {
                   const lu = lastUsedLabel(cell.lastUsedDate);
                   return (
                     <td key={c} className="p-1.5 border border-gray-100 align-top">
-                      <div className="space-y-0.5">
-                        {cell.topCities.slice(0, 3).map((city) => (
+                      <div className="max-h-32 overflow-y-auto space-y-0.5 pr-0.5">
+                        {cell.solutions.map((city) => (
                           <div key={city.name} className="text-gray-700">{city.name}</div>
                         ))}
-                        {cell.totalSolutions > 3 && (
-                          <div className="text-gray-300">+{cell.totalSolutions - 3} autres</div>
-                        )}
-                        <div className={`text-[10px] ${lu.color}`}>{lu.text}</div>
                       </div>
+                      <div className={`mt-1 text-[10px] ${lu.color}`}>{lu.text}</div>
+                      <div className="text-[10px] text-gray-300">{cell.totalSolutions} solution{cell.totalSolutions > 1 ? "s" : ""}</div>
                     </td>
                   );
                 })}
