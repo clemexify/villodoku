@@ -75,7 +75,7 @@ export function generateFromSeed(date: string): Grid | null {
   const rng = mulberry32(seedFromString(date));
 
   const easyMode = date >= EASY_MODE_START;
-  const minSolutionsPerCell = easyMode ? 8 : 3;
+  const minSolutionsPerCell = easyMode ? 4 : 3;
   const gatewayCodes = easyMode ? getGatewayCodes() : undefined;
   const seed = seedFromString(date) >>> 0;
   let grid: Grid | null = null;
@@ -160,7 +160,7 @@ export function generateCandidateGrid(
   const pool = getPool();
   const topVilleCodes = getTopVilleCodes();
   const easyMode = date >= EASY_MODE_START;
-  const minSolutionsPerCell = easyMode ? 8 : 3;
+  const minSolutionsPerCell = easyMode ? 4 : 3;
   const gatewayCodes = easyMode ? getGatewayCodes() : undefined;
 
   // Mélange de seeds pour des propositions variées
