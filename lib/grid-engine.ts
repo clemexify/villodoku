@@ -326,13 +326,13 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
   pool.set('football', [
     {
       id: 'football_l1',
-      label: 'Ville avec un club en Ligue 1 depuis 2000',
+      label: 'A eu un club de foot en L1 depuis 2000',
       category: 'football',
       test: (c) => FOOTBALL_L1_CODES.has(c.code_commune),
     },
     {
       id: 'football_l1l2',
-      label: 'Ville avec un club en L1 ou L2 depuis 2000',
+      label: 'A eu un club de foot en L1 / L2 depuis 2000',
       category: 'football',
       test: (c) => FOOTBALL_L1L2_CODES.has(c.code_commune),
     },
