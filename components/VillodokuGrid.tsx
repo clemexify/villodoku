@@ -57,6 +57,7 @@ export default function VillodokuGrid({
   const [showEndGame, setShowEndGame] = useState(true);
   const [loaded, setLoaded] = useState(false);
   const [activeCell, setActiveCell] = useState<{ row: number; col: number } | null>(null);
+  const [rejectionToast, setRejectionToast] = useState<string | null>(null);
 
   // Charge la partie sauvegardée pour cette date
   useEffect(() => {
@@ -124,7 +125,7 @@ export default function VillodokuGrid({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [won, gameOver, loaded]);
 
-  async function handleSelect(row: number, col: number, option: CommuneOption) {
+  async function handleSelect(row: number, col: number, option: CommuneOption): Promise<void> {
     if (locked || cells[row][col].status === "correct") return;
 
     const usedCodes = cells
@@ -154,8 +155,11 @@ export default function VillodokuGrid({
       return;
     }
 
-    setErrors((e) => e + 1);
+    // Ferme le modal immédiatement
     setActiveCell(null);
+    setErrors((e) => e + 1);
+
+    // Flash rouge sur la cellule
     setCells((prev) => {
       const next = prev.map((r) => r.map((c) => ({ ...c })));
       next[row][col] = { status: "incorrect" };
@@ -168,6 +172,23 @@ export default function VillodokuGrid({
         return next;
       });
     }, 800);
+
+    // Toast d'explication avec la description réelle de la ville
+    const name: string = data.communeName ?? option.nom_commune;
+    const descriptions: string[] = data.criteriaDescriptions ?? [];
+
+    let toast: string;
+    if (data.reason === "already_used") {
+      toast = `${name} est déjà placée dans la grille.`;
+    } else if (descriptions.length >= 2) {
+      toast = `${name} ${descriptions[0]} et ${descriptions[1]}.`;
+    } else if (descriptions.length === 1) {
+      toast = `${name} ${descriptions[0]}.`;
+    } else {
+      toast = `${name} n'est pas valide pour cette case.`;
+    }
+    setRejectionToast(toast);
+    setTimeout(() => setRejectionToast(null), 4000);
   }
 
   return (
@@ -272,6 +293,22 @@ export default function VillodokuGrid({
           playerCells={cells}
           onClose={() => setShowSolutions(false)}
         />
+      )}
+      {/* Toast d'explication après rejet */}
+      {rejectionToast && (
+        <div className="fixed bottom-6 left-1/2 z-50 w-full max-w-sm -translate-x-1/2 px-4">
+          <div className="flex items-start gap-3 rounded-2xl bg-gray-900 px-4 py-3 text-white shadow-xl">
+            <span className="mt-0.5 shrink-0 text-rose-400">✕</span>
+            <p className="text-sm leading-snug">{rejectionToast}</p>
+            <button
+              onClick={() => setRejectionToast(null)}
+              className="ml-auto shrink-0 text-gray-400 hover:text-white"
+              aria-label="Fermer"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

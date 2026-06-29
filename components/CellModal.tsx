@@ -13,11 +13,12 @@ export default function CellModal({
   rowLabel: string;
   colLabel: string;
   solutionsCount: number;
-  onSelect: (option: CommuneOption) => void;
+  onSelect: (option: CommuneOption) => Promise<void>;
   onClose: () => void;
 }) {
   const [query, setQuery] = useState("");
   const [options, setOptions] = useState<CommuneOption[]>([]);
+  const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -41,6 +42,17 @@ export default function CellModal({
       controller.abort();
     };
   }, [query]);
+
+  async function handleOptionClick(opt: CommuneOption) {
+    if (loading) return;
+    setLoading(true);
+    try {
+      await onSelect(opt);
+      // Le parent ferme le modal (valide ou invalide)
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div
@@ -78,7 +90,8 @@ export default function CellModal({
           autoCorrect="off"
           autoCapitalize="off"
           spellCheck={false}
-          className="w-full rounded-lg border border-gray-300 p-3 text-base text-gray-900 placeholder:text-gray-400 outline-none focus:border-indigo-500"
+          disabled={loading}
+          className="w-full rounded-lg border border-gray-300 p-3 text-base text-gray-900 placeholder:text-gray-400 outline-none focus:border-indigo-500 disabled:opacity-50"
         />
 
         <ul className="mt-2 max-h-64 overflow-auto">
@@ -86,14 +99,15 @@ export default function CellModal({
             <li key={opt.code_commune}>
               <button
                 type="button"
-                onMouseDown={(e) => { e.preventDefault(); onSelect(opt); }}
-                className="w-full rounded-lg px-3 py-2 text-left hover:bg-indigo-50"
+                disabled={loading}
+                onMouseDown={(e) => { e.preventDefault(); handleOptionClick(opt); }}
+                className="w-full rounded-lg px-3 py-2 text-left hover:bg-indigo-50 disabled:opacity-50"
               >
                 {opt.nom_commune}
               </button>
             </li>
           ))}
-          {query.trim().length >= 3 && options.length === 0 && (
+          {query.trim().length >= 3 && options.length === 0 && !loading && (
             <li className="px-3 py-2 text-sm text-gray-400">Aucun résultat</li>
           )}
         </ul>
