@@ -7,7 +7,6 @@ import {
   getWellKnownCityCodes,
   mulberry32,
   seedFromString,
-  COOLDOWN_DAYS,
   type Criterion,
   type Grid,
   type GridCell,
@@ -169,44 +168,38 @@ export function generateCandidateGrid(
   const baseSeed = (seedFromString(date) ^ (seedOffset * 2654435761)) >>> 0;
   const rng = mulberry32(baseSeed);
 
-  // Calcule les critères à exclure selon leur cooldown par catégorie
-  const criterionCategory = new Map<string, string>();
-  for (const [cat, criteria] of pool) {
-    for (const c of criteria) criterionCategory.set(c.id, cat);
-  }
-  const excludedCriteriaIds = new Set<string>();
+  // Calcule les poids de chaque critère selon son ancienneté (plus ancien = poids plus élevé)
+  const criterionWeights = new Map<string, number>();
   for (const [criterionId, lastUsedDate] of criterionLastUsed) {
     const daysSince = Math.round(
       (new Date(date).getTime() - new Date(lastUsedDate).getTime()) / 86_400_000
     );
-    const category = criterionCategory.get(criterionId);
-    const cooldown = category !== undefined ? (COOLDOWN_DAYS[category] ?? 14) : 14;
-    if (daysSince < cooldown) excludedCriteriaIds.add(criterionId);
+    criterionWeights.set(criterionId, Math.max(1, daysSince));
   }
 
-  // Essai 1 : toutes les contraintes + cooldown + croisements interdits
+  // Essai 1 : toutes les contraintes + croisements interdits
   let grid = generateGrid(communes, pool, rng, {
     topVilleCodes, gatewayCodes, minSolutionsPerCell,
-    forbiddenCrossings, excludedCriteriaIds, maxAttempts: 10000,
+    forbiddenCrossings, criterionWeights, maxAttempts: 10000,
   });
 
-  // Essai 2 : relâche les croisements interdits (garde cooldown)
+  // Essai 2 : relâche les croisements interdits
   if (!grid) {
     grid = generateGrid(communes, pool, rng, {
       topVilleCodes, gatewayCodes, minSolutionsPerCell,
-      excludedCriteriaIds, maxAttempts: 10000,
+      criterionWeights, maxAttempts: 10000,
     });
   }
 
-  // Essai 3 : relâche gatewayCodes (garde cooldown)
+  // Essai 3 : relâche gatewayCodes
   if (!grid) {
     grid = generateGrid(communes, pool, rng, {
       topVilleCodes, minSolutionsPerCell,
-      excludedCriteriaIds, maxAttempts: 10000,
+      criterionWeights, maxAttempts: 10000,
     });
   }
 
-  // Essai 4 : relâche tout (aucune contrainte de cooldown)
+  // Essai 4 : relâche tout
   if (!grid) {
     grid = generateGrid(communes, pool, rng, {
       topVilleCodes, maxAttempts: 10000,

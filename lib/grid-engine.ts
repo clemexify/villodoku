@@ -78,9 +78,11 @@ export interface GridGenOptions {
    */
   forbiddenCrossings?: Set<string>;
   /**
-   * Critères récemment utilisés à exclure du tirage (cooldown anti-répétition).
+   * Poids par critère pour le tirage pondéré anti-répétition.
+   * Valeur = nombre de jours depuis la dernière utilisation (plus grand = plus favorisé).
+   * Les critères absents de la map sont considérés jamais utilisés (poids maximal).
    */
-  excludedCriteriaIds?: Set<string>;
+  criterionWeights?: Map<string, number>;
 }
 
 // Seuils minimaux pour qu'une valeur de critère soit retenue dans le pool
@@ -114,24 +116,6 @@ const PRIORITY_CATEGORIES = [
   'saint',
 ];
 
-// Nombre de jours pendant lesquels un critère déjà utilisé est exclu du tirage.
-// Les catégories à critère unique ont un cooldown long pour éviter la répétition.
-export const COOLDOWN_DAYS: Record<string, number> = {
-  ile:        60,
-  frontiere:  60,
-  montagne:   60,
-  mer:        45,
-  saint:      30,
-  football:   30,
-  region:     28,
-  departement: 21,
-  prefecture:  21,
-  river:       21,
-  letter:      14,
-  last_letter: 14,
-  population:  14,
-  nom:         10,
-};
 
 /**
  * Construit le pool de critères disponibles, regroupés par catégorie.
@@ -506,6 +490,25 @@ function pick<T>(arr: T[], rng: () => number): T {
   return arr[Math.floor(rng() * arr.length)];
 }
 
+// Tirage pondéré : poids = daysAgo (plus ancien = plus probable).
+// Les critères absents de la map reçoivent le poids par défaut (= favorisés).
+function weightedPick<T extends { id: string }>(
+  arr: T[],
+  rng: () => number,
+  weights?: Map<string, number>
+): T {
+  if (!weights || weights.size === 0) return pick(arr, rng);
+  const DEFAULT_WEIGHT = 90;
+  const w = arr.map(c => weights.get(c.id) ?? DEFAULT_WEIGHT);
+  const total = w.reduce((a, b) => a + b, 0);
+  let r = rng() * total;
+  for (let i = 0; i < arr.length; i++) {
+    r -= w[i];
+    if (r <= 0) return arr[i];
+  }
+  return arr[arr.length - 1];
+}
+
 /**
  * Recherche une affectation de 9 communes distinctes (une par case) par
  * backtracking, en traitant d'abord les cases ayant le moins de solutions
@@ -557,19 +560,10 @@ export function generateGrid(
   rng: () => number,
   options: GridGenOptions
 ): Grid | null {
-  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory, forbiddenCrossings, excludedCriteriaIds } = options;
+  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory, forbiddenCrossings, criterionWeights } = options;
 
-  // Pool actif : exclut les critères en cooldown (si fourni)
-  const activePool: Map<string, Criterion[]> = excludedCriteriaIds
-    ? new Map(
-        Array.from(criteriaPool.entries())
-          .map(([cat, crits]) => [cat, crits.filter(c => !excludedCriteriaIds.has(c.id))] as [string, Criterion[]])
-          .filter(([, crits]) => crits.length > 0)
-      )
-    : criteriaPool;
-
-  const categories = Array.from(activePool.keys()).filter(
-    (cat) => (activePool.get(cat) ?? []).length > 0
+  const categories = Array.from(criteriaPool.keys()).filter(
+    (cat) => (criteriaPool.get(cat) ?? []).length > 0
   );
   if (categories.length < 6) return null;
 
@@ -588,10 +582,10 @@ export function generateGrid(
       // (excluant "region" pour éviter le conflit dept/région).
       // Cela évite les combinaisons fondamentalement impossibles telles que
       // "département plat × altitude > 500 m" ou "département intérieur × mer".
-      const reqPool = activePool.get(requiredCategory) ?? [];
+      const reqPool = criteriaPool.get(requiredCategory) ?? [];
       if (reqPool.length === 0) continue;
 
-      const reqCriterion = pick(reqPool, rng);
+      const reqCriterion = weightedPick(reqPool, rng, criterionWeights);
 
       const candidateCats = pickFrom.filter((c) => c !== requiredCategory && c !== 'region');
       // Pour un département, le nom du fleuve homonyme à exclure (ex: dept_Rhône → exclure river_Rhône)
@@ -602,7 +596,7 @@ export function generateGrid(
 
       const compatGroups: Array<{ cat: string; crit: Criterion[] }> = [];
       for (const cat of candidateCats) {
-        const compat = (activePool.get(cat) ?? []).filter((crit) => {
+        const compat = (criteriaPool.get(cat) ?? []).filter((crit) => {
           if (deptHomonymeRiverId && crit.id === deptHomonymeRiverId) return false;
           const sols = communes.filter((co) => reqCriterion.test(co) && crit.test(co));
           return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune)) && (!gatewayCodes || sols.some((s) => gatewayCodes.has(s.code_commune)));
@@ -614,7 +608,7 @@ export function generateGrid(
 
       const chosenGroups = shuffle(compatGroups, rng).slice(0, 5);
       criteria = shuffle(
-        [reqCriterion, ...chosenGroups.map((g) => pick(g.crit, rng))],
+        [reqCriterion, ...chosenGroups.map((g) => weightedPick(g.crit, rng, criterionWeights))],
         rng
       );
       rows = criteria.slice(0, 3);
@@ -622,7 +616,7 @@ export function generateGrid(
     } else {
       // Chemin standard
       const chosenCategories = shuffle(pickFrom, rng).slice(0, 6);
-      criteria = chosenCategories.map((cat) => pick(activePool.get(cat)!, rng));
+      criteria = chosenCategories.map((cat) => weightedPick(criteriaPool.get(cat)!, rng, criterionWeights));
 
       const ids = new Set(criteria.map((c) => c.id));
       if (ids.has('saint') && (ids.has('letter_S') || ids.has('tiret'))) continue;
