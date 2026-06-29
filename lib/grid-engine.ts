@@ -105,6 +105,7 @@ const PRIORITY_CATEGORIES = [
   'nom',
   'montagne',
   'river',
+  'football',
 ];
 
 /**
@@ -297,6 +298,43 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       label: 'Nom commençant par "Saint"',
       category: 'saint',
       test: (c) => c.nom_commence_saint,
+    },
+  ]);
+
+  // Clubs de football professionnels (L1 ou L2 depuis 2000)
+  // Codes INSEE vérifiés contre le corpus
+  const FOOTBALL_L1_CODES = new Set([
+    '75056','13055','69123','33063','59350','44109','42218','35238','06088','34172',
+    '31555','67482','59606','62498','89024','14118','57463','56121','29019','51454',
+    '10387','49007','21231','2A004','08409',
+    '25547','25388', // Sochaux + Montbéliard
+    '76351','54395','30189','63113',
+    '80021','22070','2B033','38185','13047','72181',
+    '13004','84007', // Arles + Avignon (AC Arles-Avignon)
+    '74119','74281','74133', // Évian-les-Bains + Thonon-les-Bains + Gaillard
+    '53130','74010', // Laval + Annecy
+  ]);
+  const FOOTBALL_L1L2_CODES = new Set([
+    ...FOOTBALL_L1_CODES,
+    '12202','59183','64445','37261','79191','45234','36044','06029','25056','16015',
+    '68066','69264','94028','56260','13056','29039','88160','50025','28085',
+    '34032','29232','73065','50129',
+    '76540','76498', // Rouen + Le Petit-Quevilly (Quevilly Rouen Métropole)
+    '93070', // Saint-Ouen-sur-Seine (Red Star FC)
+    '78646', // Versailles (FC Versailles 78)
+  ]);
+  pool.set('football', [
+    {
+      id: 'football_l1',
+      label: 'Ville avec un club en Ligue 1 depuis 2000',
+      category: 'football',
+      test: (c) => FOOTBALL_L1_CODES.has(c.code_commune),
+    },
+    {
+      id: 'football_l1l2',
+      label: 'Ville avec un club en L1 ou L2 depuis 2000',
+      category: 'football',
+      test: (c) => FOOTBALL_L1L2_CODES.has(c.code_commune),
     },
   ]);
 
