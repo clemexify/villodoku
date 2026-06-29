@@ -21,9 +21,10 @@ export async function GET(req: NextRequest) {
     .from("scheduled_grids")
     .select("date, rows, cols");
 
-  // Construit les croisements interdits (utilisés à ±30 jours de la date cible)
+  // Construit les croisements interdits et le cooldown par critère individuel
   const forbiddenCrossings = new Set<string>();
   const crossingLastUsed = new Map<string, string>();
+  const criterionLastUsed = new Map<string, string>();
   const targetTime = new Date(date).getTime();
 
   for (const row of (scheduled ?? [])) {
@@ -31,6 +32,16 @@ export async function GET(req: NextRequest) {
     const daysDiff = Math.abs(new Date(row.date).getTime() - targetTime) / 86_400_000;
     const rows = row.rows as { id: string }[];
     const cols = row.cols as { id: string }[];
+
+    // Cooldown par critère individuel
+    for (const crit of [...rows, ...cols]) {
+      const existing = criterionLastUsed.get(crit.id);
+      if (!existing || (row.date as string) > existing) {
+        criterionLastUsed.set(crit.id, row.date as string);
+      }
+    }
+
+    // Croisements interdits (paires)
     for (const r of rows) {
       for (const c of cols) {
         const key = `${r.id}|${c.id}`;
@@ -41,7 +52,7 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  const candidate = generateCandidateGrid(date, forbiddenCrossings, crossingLastUsed, seedOffset);
+  const candidate = generateCandidateGrid(date, forbiddenCrossings, crossingLastUsed, seedOffset, criterionLastUsed);
 
   if (!candidate) {
     return NextResponse.json({ error: "Impossible de générer une grille" }, { status: 500 });

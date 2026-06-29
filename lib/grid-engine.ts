@@ -77,6 +77,10 @@ export interface GridGenOptions {
    * Utilisé par l'interface de curation pour éviter les croisements récemment utilisés.
    */
   forbiddenCrossings?: Set<string>;
+  /**
+   * Critères récemment utilisés à exclure du tirage (cooldown anti-répétition).
+   */
+  excludedCriteriaIds?: Set<string>;
 }
 
 // Seuils minimaux pour qu'une valeur de critère soit retenue dans le pool
@@ -107,7 +111,27 @@ const PRIORITY_CATEGORIES = [
   'river',
   'football',
   'ile',
+  'saint',
 ];
+
+// Nombre de jours pendant lesquels un critère déjà utilisé est exclu du tirage.
+// Les catégories à critère unique ont un cooldown long pour éviter la répétition.
+export const COOLDOWN_DAYS: Record<string, number> = {
+  ile:        60,
+  frontiere:  60,
+  montagne:   60,
+  mer:        45,
+  saint:      30,
+  football:   30,
+  region:     28,
+  departement: 21,
+  prefecture:  21,
+  river:       21,
+  letter:      14,
+  last_letter: 14,
+  population:  14,
+  nom:         10,
+};
 
 /**
  * Construit le pool de critères disponibles, regroupés par catégorie.
@@ -533,10 +557,19 @@ export function generateGrid(
   rng: () => number,
   options: GridGenOptions
 ): Grid | null {
-  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory, forbiddenCrossings } = options;
+  const { minSolutionsPerCell = 3, topVilleCodes, gatewayCodes, maxAttempts = 5000, requiredCategory, forbiddenCrossings, excludedCriteriaIds } = options;
 
-  const categories = Array.from(criteriaPool.keys()).filter(
-    (cat) => (criteriaPool.get(cat) ?? []).length > 0
+  // Pool actif : exclut les critères en cooldown (si fourni)
+  const activePool: Map<string, Criterion[]> = excludedCriteriaIds
+    ? new Map(
+        Array.from(criteriaPool.entries())
+          .map(([cat, crits]) => [cat, crits.filter(c => !excludedCriteriaIds.has(c.id))] as [string, Criterion[]])
+          .filter(([, crits]) => crits.length > 0)
+      )
+    : criteriaPool;
+
+  const categories = Array.from(activePool.keys()).filter(
+    (cat) => (activePool.get(cat) ?? []).length > 0
   );
   if (categories.length < 6) return null;
 
@@ -555,7 +588,7 @@ export function generateGrid(
       // (excluant "region" pour éviter le conflit dept/région).
       // Cela évite les combinaisons fondamentalement impossibles telles que
       // "département plat × altitude > 500 m" ou "département intérieur × mer".
-      const reqPool = criteriaPool.get(requiredCategory) ?? [];
+      const reqPool = activePool.get(requiredCategory) ?? [];
       if (reqPool.length === 0) continue;
 
       const reqCriterion = pick(reqPool, rng);
@@ -569,7 +602,7 @@ export function generateGrid(
 
       const compatGroups: Array<{ cat: string; crit: Criterion[] }> = [];
       for (const cat of candidateCats) {
-        const compat = (criteriaPool.get(cat) ?? []).filter((crit) => {
+        const compat = (activePool.get(cat) ?? []).filter((crit) => {
           if (deptHomonymeRiverId && crit.id === deptHomonymeRiverId) return false;
           const sols = communes.filter((co) => reqCriterion.test(co) && crit.test(co));
           return sols.length >= minSolutionsPerCell && sols.some((s) => topVilleCodes.has(s.code_commune)) && (!gatewayCodes || sols.some((s) => gatewayCodes.has(s.code_commune)));
@@ -589,7 +622,7 @@ export function generateGrid(
     } else {
       // Chemin standard
       const chosenCategories = shuffle(pickFrom, rng).slice(0, 6);
-      criteria = chosenCategories.map((cat) => pick(criteriaPool.get(cat)!, rng));
+      criteria = chosenCategories.map((cat) => pick(activePool.get(cat)!, rng));
 
       const ids = new Set(criteria.map((c) => c.id));
       if (ids.has('saint') && (ids.has('letter_S') || ids.has('tiret'))) continue;
