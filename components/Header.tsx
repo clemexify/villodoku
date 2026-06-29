@@ -8,7 +8,7 @@ export default function Header({ streak }: { streak: number }) {
           <span className="text-indigo-600">Villo</span>
           <span className="text-gray-800">doku</span>
         </h1>
-        <p className="text-[10px] font-medium tracking-wide text-gray-400">Testez votre connaissance des villes de France</p>
+        <p className="text-[10px] font-medium tracking-wide text-gray-400">Testes ta connaissance des villes de France</p>
       </div>
 
       <div
