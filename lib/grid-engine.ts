@@ -106,6 +106,7 @@ const PRIORITY_CATEGORIES = [
   'montagne',
   'river',
   'football',
+  'ile',
 ];
 
 /**
@@ -335,6 +336,23 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       label: 'A eu un club de foot en L1 / L2 depuis 2000',
       category: 'football',
       test: (c) => FOOTBALL_L1L2_CODES.has(c.code_commune),
+    },
+  ]);
+
+  // Îles : Corse + DOM-TOM (via dept) + petites îles métropolitaines (codes INSEE vérifiés)
+  const ILE_METRO_CODES = new Set([
+    '17161','17297','17369','17360', // Île de Ré : La Flotte, Rivedoux-Plage, Saint-Martin-de-Ré, Sainte-Marie-de-Ré
+    '17093','17140','17337','17385', // Île d'Oléron : Le Château-d'Oléron, Dolus-d'Oléron, Saint-Georges, Saint-Pierre
+    '85163','85113',                 // Noirmoutier-en-l'Île, L'Île-d'Yeu
+    '56152','56069',                 // Le Palais (Belle-Île), Groix
+  ]);
+  const ILE_DEPT_CODES = new Set(['2A','2B','971','972','973','974','976']);
+  pool.set('ile', [
+    {
+      id: 'ile',
+      label: 'Situé sur une île',
+      category: 'ile',
+      test: (c) => ILE_DEPT_CODES.has(c.departement_code) || ILE_METRO_CODES.has(c.code_commune),
     },
   ]);
 
