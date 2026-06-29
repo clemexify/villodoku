@@ -107,6 +107,7 @@ const PRIORITY_CATEGORIES = [
   'river',
   'football',
   'ile',
+  'loire',
 ];
 
 /**
@@ -336,6 +337,30 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       label: 'A eu un club de foot en L1 / L2 depuis 2000',
       category: 'football',
       test: (c) => FOOTBALL_L1L2_CODES.has(c.code_commune),
+    },
+  ]);
+
+  // Nord / Sud de la Loire — classification par département
+  // Depts "nord" : au-dessus du tracé culturel de la Loire (Bretagne, Normandie,
+  // Île-de-France, Grand Est, Centre-Val de Loire nord, etc.)
+  const NORD_LOIRE_DEPTS = new Set([
+    '02','08','10','14','21','22','25','27','28','29','35','37','39','41',
+    '44','45','49','50','51','52','53','54','55','56','57','59','60','61',
+    '62','67','68','70','72','75','76','77','78','80','88','89','90',
+    '91','92','93','94','95',
+  ]);
+  pool.set('loire', [
+    {
+      id: 'nord_loire',
+      label: 'Au nord de la Loire',
+      category: 'loire',
+      test: (c) => NORD_LOIRE_DEPTS.has(c.departement_code),
+    },
+    {
+      id: 'sud_loire',
+      label: 'Au sud de la Loire',
+      category: 'loire',
+      test: (c) => !NORD_LOIRE_DEPTS.has(c.departement_code),
     },
   ]);
 
