@@ -140,8 +140,8 @@ export type CellPreview = {
 };
 
 export type GridCandidate = {
-  rows: { id: string; label: string; category: string }[];
-  cols: { id: string; label: string; category: string }[];
+  rows: { id: string; label: string; category: string; lastUsedDate: string | null }[];
+  cols: { id: string; label: string; category: string; lastUsedDate: string | null }[];
   cells: CellPreview[][];
 };
 
@@ -168,49 +168,61 @@ export function generateCandidateGrid(
   const baseSeed = (seedFromString(date) ^ (seedOffset * 2654435761)) >>> 0;
   const rng = mulberry32(baseSeed);
 
-  // Calcule les poids de chaque critère selon son ancienneté (plus ancien = poids plus élevé)
+  // Critères à exclure durement dans les niveaux 1-3 (utilisés dans les RECENT_DAYS jours autour de la date)
+  const RECENT_DAYS = 5;
+  const recentlyExcluded = new Set<string>();
   const criterionWeights = new Map<string, number>();
+
   for (const [criterionId, lastUsedDate] of criterionLastUsed) {
-    const daysSince = Math.round(
+    // Math.abs pour traiter correctement grilles passées ET futures
+    const daysApart = Math.abs(Math.round(
       (new Date(date).getTime() - new Date(lastUsedDate).getTime()) / 86_400_000
-    );
-    criterionWeights.set(criterionId, Math.max(1, daysSince));
+    ));
+    if (daysApart < RECENT_DAYS) recentlyExcluded.add(criterionId);
+    criterionWeights.set(criterionId, Math.max(1, daysApart));
   }
 
-  // Essai 1 : toutes les contraintes + croisements interdits
-  let grid = generateGrid(communes, pool, rng, {
+  // Pool filtré : exclut les critères trop récents (catégorie supprimée si vide)
+  const recentPool = new Map<string, Criterion[]>();
+  for (const [cat, crits] of pool) {
+    const available = crits.filter((c) => !recentlyExcluded.has(c.id));
+    if (available.length > 0) recentPool.set(cat, available);
+  }
+
+  // Essai 1 : pool filtré + croisements interdits + poids
+  let grid = generateGrid(communes, recentPool, rng, {
     topVilleCodes, gatewayCodes, minSolutionsPerCell,
     forbiddenCrossings, criterionWeights, maxAttempts: 10000,
   });
 
-  // Essai 2 : relâche les croisements interdits
+  // Essai 2 : pool filtré, relâche les croisements interdits
   if (!grid) {
-    grid = generateGrid(communes, pool, rng, {
+    grid = generateGrid(communes, recentPool, rng, {
       topVilleCodes, gatewayCodes, minSolutionsPerCell,
       criterionWeights, maxAttempts: 10000,
     });
   }
 
-  // Essai 3 : relâche gatewayCodes
+  // Essai 3 : pool filtré, relâche gatewayCodes
   if (!grid) {
-    grid = generateGrid(communes, pool, rng, {
+    grid = generateGrid(communes, recentPool, rng, {
       topVilleCodes, minSolutionsPerCell,
       criterionWeights, maxAttempts: 10000,
     });
   }
 
-  // Essai 4 : relâche tout
+  // Essai 4 : pool complet sans aucune contrainte (filet de sécurité)
   if (!grid) {
     grid = generateGrid(communes, pool, rng, {
-      topVilleCodes, maxAttempts: 10000,
+      topVilleCodes, criterionWeights, maxAttempts: 10000,
     });
   }
 
   if (!grid) return null;
 
   return {
-    rows: grid.rows.map((r) => ({ id: r.id, label: r.label, category: r.category })),
-    cols: grid.cols.map((c) => ({ id: c.id, label: c.label, category: c.category })),
+    rows: grid.rows.map((r) => ({ id: r.id, label: r.label, category: r.category, lastUsedDate: criterionLastUsed.get(r.id) ?? null })),
+    cols: grid.cols.map((c) => ({ id: c.id, label: c.label, category: c.category, lastUsedDate: criterionLastUsed.get(c.id) ?? null })),
     cells: grid.cells.map((row, r) =>
       row.map((cell, c) => {
         const key = `${grid.rows[r].id}|${grid.cols[c].id}`;

@@ -31,6 +31,8 @@ export interface Commune {
   nom_commence_saint: boolean;
   nom_premiere_lettre: string;
   nom_derniere_lettre: string;
+  latitude: number | null;
+  longitude: number | null;
 }
 
 export interface Criterion {
@@ -93,7 +95,35 @@ const MIN_CANDIDATES = {
   region: 30,
   departement: 20,
   river: 3,
+  contains: 200,
+  distance: 100,
 };
+
+// Villes de référence pour les critères de distance
+const REFERENCE_CITIES = [
+  { id: 'paris',      name: 'Paris',      lat: 48.8566, lon: 2.3522 },
+  { id: 'lyon',       name: 'Lyon',       lat: 45.7640, lon: 4.8357 },
+  { id: 'marseille',  name: 'Marseille',  lat: 43.2965, lon: 5.3698 },
+  { id: 'bordeaux',   name: 'Bordeaux',   lat: 44.8378, lon: -0.5792 },
+  { id: 'toulouse',   name: 'Toulouse',   lat: 43.6047, lon: 1.4442 },
+  { id: 'nantes',     name: 'Nantes',     lat: 47.2184, lon: -1.5536 },
+  { id: 'lille',      name: 'Lille',      lat: 50.6292, lon: 3.0573 },
+  { id: 'nice',       name: 'Nice',       lat: 43.7102, lon: 7.2620 },
+  { id: 'strasbourg', name: 'Strasbourg', lat: 48.5734, lon: 7.7521 },
+  { id: 'rennes',     name: 'Rennes',     lat: 48.1173, lon: -1.6778 },
+  { id: 'tours',      name: 'Tours',      lat: 47.3941, lon: 0.6848 },
+  { id: 'montpellier',name: 'Montpellier',lat: 43.6119, lon: 3.8772 },
+  { id: 'dijon',      name: 'Dijon',      lat: 47.3220, lon: 5.0415 },
+  { id: 'clermont',   name: 'Clermont-Ferrand', lat: 45.7772, lon: 3.0870 },
+];
+
+function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
 
 // Catégories privilégiées pour la génération des grilles : on tire les 6
 // critères d'une grille en priorité parmi celles-ci.
@@ -114,6 +144,9 @@ const PRIORITY_CATEGORIES = [
   'football',
   'ile',
   'saint',
+  'distance',
+  'contains',
+  'drom',
 ];
 
 
@@ -294,6 +327,18 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
       test: (c) => c.nom_commune.replace(/[-'\s]/g, '').length <= 4,
     },
     {
+      id: 'nom_7car',
+      label: 'Nom de 7 caractères exactement',
+      category: 'nom',
+      test: (c) => c.nom_commune.length === 7,
+    },
+    {
+      id: 'nom_8car',
+      label: 'Nom de 8 caractères exactement',
+      category: 'nom',
+      test: (c) => c.nom_commune.length === 8,
+    },
+    {
       id: 'sans_e',
       label: 'Nom sans la lettre « e »',
       category: 'nom',
@@ -424,6 +469,31 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
   }
   pool.set('last_letter', lastLetters);
 
+  // Lettre contenue dans le nom (insensible aux accents)
+  const containsCounts = new Map<string, number>();
+  for (const c of communes) {
+    const normalized = c.nom_commune.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const seen = new Set<string>();
+    for (const ch of normalized) {
+      if (ch >= 'a' && ch <= 'z' && !seen.has(ch)) {
+        seen.add(ch);
+        containsCounts.set(ch, (containsCounts.get(ch) ?? 0) + 1);
+      }
+    }
+  }
+  const containsCriteria: Criterion[] = [];
+  for (const [letter, count] of [...containsCounts].sort((a, b) => a[0].localeCompare(b[0]))) {
+    if (count >= MIN_CANDIDATES.contains) {
+      containsCriteria.push({
+        id: `contains_${letter}`,
+        label: `Nom contenant la lettre « ${letter.toUpperCase()} »`,
+        category: 'contains',
+        test: (c) => c.nom_commune.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().includes(letter),
+      });
+    }
+  }
+  pool.set('contains', containsCriteria);
+
   // Région administrative : uniquement les régions suffisamment représentées
   const regionCounts = new Map<string, number>();
   for (const c of communes) {
@@ -441,6 +511,23 @@ export function buildCriteriaPool(communes: Commune[]): Map<string, Criterion[]>
     }
   }
   pool.set('region', regions);
+
+  // Critères de distance : "À moins de 200 km de [ville]"
+  const distanceCriteria: Criterion[] = [];
+  for (const city of REFERENCE_CITIES) {
+    const count = communes.filter(
+      (c) => c.latitude != null && haversineKm(c.latitude, c.longitude!, city.lat, city.lon) <= 200
+    ).length;
+    if (count >= MIN_CANDIDATES.distance) {
+      distanceCriteria.push({
+        id: `dist_200_${city.id}`,
+        label: `À moins de 200 km de ${city.name}`,
+        category: 'distance',
+        test: (c) => c.latitude != null && haversineKm(c.latitude, c.longitude!, city.lat, city.lon) <= 200,
+      });
+    }
+  }
+  pool.set('distance', distanceCriteria);
 
   return pool;
 }

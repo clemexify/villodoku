@@ -79,7 +79,7 @@ function describeForCommune(criterionId: string, c: Commune): string {
       ? `son nom se termine par « ville »`
       : `son nom ne se termine pas par « ville »`;
   }
-  if (criterionId === "nom_long") {
+  if (criterionId === "nom_long" || criterionId === "nom_7car" || criterionId === "nom_8car") {
     return `son nom compte ${c.nom_commune.length} caractères`;
   }
   if (criterionId === "nom_court") {
@@ -91,6 +91,13 @@ function describeForCommune(criterionId: string, c: Commune): string {
   }
   if (criterionId.startsWith("last_letter_")) {
     return `se termine par la lettre « ${c.nom_derniere_lettre} »`;
+  }
+  if (criterionId.startsWith("contains_")) {
+    const letter = criterionId.replace("contains_", "");
+    const normalized = c.nom_commune.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    return normalized.includes(letter)
+      ? `son nom contient la lettre « ${letter.toUpperCase()} »`
+      : `son nom ne contient pas la lettre « ${letter.toUpperCase()} »`;
   }
   if (criterionId.startsWith("river_")) {
     const river = criterionId.replace("river_", "");
@@ -113,6 +120,18 @@ function describeForCommune(criterionId: string, c: Commune): string {
   }
   if (criterionId === "sous_prefecture") {
     return c.est_sous_prefecture ? `est une sous-préfecture` : `n'est pas une sous-préfecture`;
+  }
+  if (criterionId.startsWith("dist_")) {
+    const parts = criterionId.split("_"); // ["dist", "50", "paris"]
+    const km = parts[1];
+    const cityName = parts.slice(2).join("_");
+    const CITY_NAMES: Record<string, string> = {
+      paris: "Paris", lyon: "Lyon", marseille: "Marseille", bordeaux: "Bordeaux",
+      toulouse: "Toulouse", nantes: "Nantes", lille: "Lille", nice: "Nice",
+      strasbourg: "Strasbourg", rennes: "Rennes", tours: "Tours",
+      montpellier: "Montpellier", dijon: "Dijon", clermont: "Clermont-Ferrand",
+    };
+    return `n'est pas à moins de ${km} km de ${CITY_NAMES[cityName] ?? cityName}`;
   }
   return `ne remplit pas ce critère`;
 }

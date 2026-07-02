@@ -334,31 +334,48 @@ function CandidateGrid({ candidate }: { candidate: GridCandidate }) {
     <>
       <div className="mb-3 flex flex-wrap gap-2">
         <span className="text-xs text-gray-400 self-center">Lignes :</span>
-        {candidate.rows.map((r) => (
-          <span key={r.id} className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">{r.label}</span>
-        ))}
+        {candidate.rows.map((r) => {
+          const lu = lastUsedLabel(r.lastUsedDate ?? null);
+          return (
+            <span key={r.id} className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">
+              {r.label} <span className={`font-normal ${lu.color}`}>({lu.text})</span>
+            </span>
+          );
+        })}
         <span className="text-xs text-gray-400 self-center ml-1">Cols :</span>
-        {candidate.cols.map((c) => (
-          <span key={c.id} className="rounded-full bg-violet-50 px-2.5 py-0.5 text-xs font-medium text-violet-700">{c.label}</span>
-        ))}
+        {candidate.cols.map((c) => {
+          const lu = lastUsedLabel(c.lastUsedDate ?? null);
+          return (
+            <span key={c.id} className="rounded-full bg-violet-50 px-2.5 py-0.5 text-xs font-medium text-violet-700">
+              {c.label} <span className={`font-normal ${lu.color}`}>({lu.text})</span>
+            </span>
+          );
+        })}
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-xs border-collapse">
           <thead>
             <tr>
               <th className="w-24" />
-              {candidate.cols.map((c) => (
-                <th key={c.id} className="p-1 text-center font-semibold text-violet-700 bg-violet-50 border border-gray-100">
-                  {c.label}
-                </th>
-              ))}
+              {candidate.cols.map((c) => {
+                const lu = lastUsedLabel(c.lastUsedDate ?? null);
+                return (
+                  <th key={c.id} className="p-1 text-center font-semibold text-violet-700 bg-violet-50 border border-gray-100">
+                    {c.label}
+                    <div className={`font-normal text-[10px] ${lu.color}`}>{lu.text}</div>
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>
-            {candidate.rows.map((row, r) => (
+            {candidate.rows.map((row, r) => {
+              const lu = lastUsedLabel(row.lastUsedDate ?? null);
+              return (
               <tr key={row.id}>
                 <td className="p-1 font-semibold text-indigo-700 bg-indigo-50 text-right pr-2 border border-gray-100">
                   {row.label}
+                  <div className={`font-normal text-[10px] ${lu.color}`}>{lu.text}</div>
                 </td>
                 {candidate.cells[r].map((cell, c) => {
                   const lu = lastUsedLabel(cell.lastUsedDate);
@@ -375,7 +392,8 @@ function CandidateGrid({ candidate }: { candidate: GridCandidate }) {
                   );
                 })}
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
